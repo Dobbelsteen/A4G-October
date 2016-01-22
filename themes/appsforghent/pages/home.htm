@@ -2,6 +2,13 @@ title = "Home"
 url = "/"
 layout = "default"
 is_hidden = 0
+
+[blogPosts]
+pageNumber = 1
+postsPerPage = 3
+noPostsMessage = "Geen nieuwsberichten"
+sortOrder = "published_at desc"
+postPage = "nieuws/post"
 ==
 <div id="page-intro" class="section section-white">
     <div class="container text-center">
@@ -29,7 +36,7 @@ is_hidden = 0
                 Apps For Ghent wil Gentse bedrijven en organisaties over de streep trekken om bij de beleidskeuze tussen ontsluiten van data of verkopen van data onder gesloten licentie te kiezen voor open data.
             </h3>
             <br>
-            <span class="chip chip-light-blue">MEER INFORMATIE</span>
+            <a href="{{ 'hackathon'|page }}" class="chip chip-light-blue">MEER INFORMATIE</a>
         </div>
     </div>
     
@@ -38,28 +45,24 @@ is_hidden = 0
         <div class="container">
             <h2 class="text-center">&lt;NIEUWS/&gt;</h2>
             <div class="row info-cards">
+                {% for id, post in posts %}
                 <div class="col-md-4 col-xs-12">
                     <div class="card-white card-image">
-                        <img src="{{ 'assets/svg/A4G.svg'|theme }}">
-                        <h4>3D, Multi en OpenD</h4>
+                        <div class="news-post-image">
+                            {% if post.featured_images.count %}
+                                <a class="overlay" href="{{ 'blog'|page({ slug: post.slug }) }}" style="background-image: url('{{ post.featured_images[0].path }}')"></a>            
+                            {% else %}     
+                                <a class="overlay" href="{{ 'blog'|page({ slug: post.slug }) }}" style="background-image: url('{{ 'assets/images/blog.png'|theme }}')"></a>
+                            {% endif %}
+                        </div>
+                        <h4><a href="{{ 'blog'|page({ slug: post.slug }) }}">{{ post.title|raw }}</a></h4>
                     </div>
                 </div>
-                <div class="col-md-4 col-xs-12">
-                    <div class="card-white card-image">                        
-                        <img src="{{ 'assets/svg/A4G.svg'|theme }}">
-                        <h4>Op zoek naar betere communicatie omtrent data</h4>
-                    </div>
-                </div>
-                <div class="col-md-4 col-xs-12">
-                    <div class="card-white card-image">
-                        <img src="{{ 'assets/svg/A4G.svg'|theme }}">
-                        <h4>Fietsstallingen</h4>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             
             <div class="view-more">
-                <span class="light pull-right"><a href="">Alles weergeven &gt;</a></span>
+                <span class="light pull-right"><a href="{{ 'nieuws'|page }}">Alles weergeven &gt;</a></span>
             </div>
             
             <h2 class="text-center">&lt;SHOWCASES/&gt;</h2>

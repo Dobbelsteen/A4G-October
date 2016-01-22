@@ -149,6 +149,14 @@ h4 {
     &>div {
         display: flex;
     }
+    
+    .overlay {
+        display: block;
+        background-size: cover;
+        width: 100%;
+        height: 250px;
+    }
+
 }
 
 .card-transparent, .card-white, .card-grey {
@@ -187,6 +195,7 @@ h4 {
     
     img {
         width: 100%;
+        height: 250px;
     }
     
     h4 {
@@ -519,6 +528,7 @@ footer {
  
 }
 
+
 /**
  * About Page
  */
@@ -555,6 +565,10 @@ footer {
             &.active {
                 background-color: $color-light;
                 color: $font-color-dark;
+                
+                a {
+                    color: $font-color-dark;
+                }
             }
         }   
     }
@@ -668,6 +682,10 @@ footer {
         margin-right: 0.2em;
         font-size: 0.9em;
     }
+}
+
+a.chip:hover {
+    color: $font-color-white;
 }
 
 hr {
