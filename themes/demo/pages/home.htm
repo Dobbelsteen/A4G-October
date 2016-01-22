@@ -1,0 +1,18 @@
+title = "Demonstration"
+url = "/"
+layout = "default"
+hidden = "0"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = "0"
+categoryPage = "blog/category"
+==
+<div class="jumbotron">
+    <div class="container">
+    </div>
+</div>
+
+<div class="container">
+   {% component 'blogCategories' %}
+</div>

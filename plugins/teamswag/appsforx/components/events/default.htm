@@ -1,0 +1,9 @@
+{% set events = __SELF__.events %}
+
+<ul class="event-list">
+    {% for event in events %}
+        <li>
+            {{ event.name }}
+        </li>
+    {% endfor %}
+</ul>

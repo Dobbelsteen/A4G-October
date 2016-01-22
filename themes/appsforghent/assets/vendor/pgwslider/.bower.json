@@ -1,0 +1,14 @@
+{
+  "name": "pgwslider",
+  "homepage": "https://github.com/Pagawa/PgwSlider",
+  "version": "2.3.0",
+  "_release": "2.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.3.0",
+    "commit": "ba33151d1fb4eadddecaad809abcb54eb1946ebb"
+  },
+  "_source": "git://github.com/Pagawa/PgwSlider.git",
+  "_target": "~2.3.*",
+  "_originalSource": "pgwslider"
+}

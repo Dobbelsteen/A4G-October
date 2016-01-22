@@ -1,0 +1,55 @@
+{% set session = __SELF__.session %}
+
+<div id="event" class="clearfix">
+    <h3 id="event-title">{{ session.name }}</h3>
+    <div class="event-desc">
+        <ul>
+            <li>Time: {{ session.start }}-{{ session.end }}</li>
+            <li>Location: {{ session.Location.name }}</li>
+            <li>Level: {{ session.niveau }}</li>
+            <li>Type: {{ session.type }}</li>
+        </ul>
+    </div>
+    <div class="event-long-desc">
+        <p>
+            {{ session.descr|raw }}
+        </p>
+    </div>
+</div>
+
+<div id="speakers" class="clearfix">
+    <h3 id="speakers-title">Speakers</h3>
+    
+    <div id="speaker-blocks" class="clearfix">
+        {% for speaker in session.speakers %}
+            <div class="speaker clearfix">
+                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front" style="background-image: url('{{ speaker.avatar.path }}')">
+                        </div>
+                        <div class="back">
+                            <div class="text">
+                                <h3>Hello I'm {{ speaker.name }}</h3>
+                                <p>{{ speaker.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="text">
+                        <h3>{{ speaker.name }}</h3>
+                        <p id="function">{{ speaker.function }}</p>
+                        <p id="company">{{ speaker.organisation }}</p>
+                    </div>
+                    {% if speaker.twitter %}
+                        <a href="{{ speaker.twitter }}"><img id="twitter" src="{{ 'assets/images/transparant.png'|theme }}" alt="twitter {{ speaker.name }}"></a>
+                    {% endif %}
+
+                    {% if speaker.linkedIn %}
+                        <a href="{{ speaker.linkedIn }}"><img id="linkedin" src="{{ 'assets/images/transparant.png'|theme }}" alt="linkedin {{ speaker.name }}"></a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

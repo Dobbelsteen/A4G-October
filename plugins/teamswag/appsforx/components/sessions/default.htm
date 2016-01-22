@@ -1,0 +1,59 @@
+{% set sessions = __SELF__.sessions %}
+{% set locations = __SELF__.locations %}
+
+<div class="timetable"></div>
+    
+<script src="{{ 'assets/javascript/timetable.min.js'|theme }}"></script>
+
+<script>
+
+    var timetable = new Timetable();
+  
+    timetable.setScope(8,19)
+  
+    timetable.addLocations([
+        {% for location in locations %}
+            {% if loop.index == locations.count %}
+                '{{ location.name }}'
+            {% else %}
+                '{{ location.name }}',
+            {% endif %}
+        {% endfor %}
+    ]);
+  
+    {% for session in sessions %}
+            {% if session.is_global %} 
+                {% for location in locations %}
+                    timetable.addEvent('{{ session.name }}', '{{ location.name }}', new Date('{{ session.start_time }}'), new Date('{{ session.end_time }}')
+
+                    {% if session.slug %}
+                        , "{{ url() }}/session/{{ session.slug }}"
+                    {% endif %}               
+                    );
+                    
+                    {% if session.color %}
+                        timetable.events[timetable.events.length-1].color = "{{ session.color }}";
+                    {% endif %}   
+                    
+                {% endfor %}
+            {% else %}
+                timetable.addEvent('{{ session.name }}', '{{ session.loc }}', new Date('{{ session.start_time }}'), new Date('{{ session.end_time }}')
+    
+                {% if session.slug %}
+                    , "{{ url() }}/session/{{ session.slug }}"
+                {% endif %} 
+                );
+                
+                {% if session.color %}
+                    timetable.events[timetable.events.length-1].color = "{{ session.color }}";
+                {% endif %}   
+                
+            {% endif %} 
+    {% endfor %}
+  
+    var renderer = new Timetable.Renderer(timetable);
+    renderer.draw('.timetable');
+    
+    console.log(timetable);
+
+</script>

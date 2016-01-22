@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Event
+
+# Model Form Field configuration
+form: $/teamswag/appsforx/models/event/fields.yaml
+
+# Model Class name
+modelClass: Teamswag\Appsforx\Models\Event
+
+# Default redirect location
+defaultRedirect: teamswag/appsforx/events
+
+# Create page
+create:
+    title: Create Event
+    redirect: teamswag/appsforx/events/update/:id
+    redirectClose: teamswag/appsforx/events
+
+# Update page
+update:
+    title: Edit Event
+    redirect: teamswag/appsforx/events
+    redirectClose: teamswag/appsforx/events
+
+# Preview page
+preview:
+    title: Preview Event

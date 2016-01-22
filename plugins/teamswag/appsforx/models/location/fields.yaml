@@ -1,0 +1,19 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Name
+        type: text
+
+    description:
+        label: Description
+        cssClass: field-slim
+        type: codeeditor
+        language: markdown
+        showGutter: false
+        wrapWords: true
+        fontSize: 13
+        margin: 15
+

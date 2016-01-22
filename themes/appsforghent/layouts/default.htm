@@ -1,0 +1,79 @@
+description = "One Pager Layout"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MappsForGhent - {{ this.page.title }}</title>
+        <!-- Meta tags -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Apps For Ghent is een initiatief van de Stad Gent, Open Knowledge Belgium en Ghent Living Lab om Gentse open data te promoten.">
+        <meta name="keywords" content="hackathon, Gent, Ghent, Apps, Open, Data">
+        <meta name="author" content="AppsForGhent">
+        <meta property="og:title" content="MappsForGhent" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{{ url_full() }}" />
+        <meta property="og:image" content="http://2016.appsforghent.be/assets/png/og_logo.png" />
+        <meta property="og:description" content="Apps For Ghent is een initiatief van de Stad Gent, Open Knowledge Belgium en Ghent Living Lab om de Gentse open data te promoten." />
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@appsforghent">
+        <meta name="twitter:title" content="MappsForGhent">
+        <meta name="twitter:description" content="Apps For Ghent is een initiatief van de Stad Gent, Open Knowledge Belgium en Ghent Living Lab om de Gentse open data te promoten.">
+        <meta name="twitter:image" content="http://2016.appsforghent.be/assets/png/og_logo.png" />
+        <meta name="twitter:url" content="{{ url_full() }}" />
+        <link rel="icon" type="image/x-icon" href="{{ 'assets/favicon.ico'|theme }}" />
+        <link href="{{ 'assets/css/a4g.css'|theme }}" rel="stylesheet">
+         <script type="application/ld+json">
+        {
+            "@context" : "http://schema.org",
+            "@type" : "Event",
+            "name" : "MappsForGhent 2016",
+            "startDate" : "2016-03-19T09:00",
+            "endDate" : "2016-03-19T19:00",
+            "url" : "http://appsforghent.be",
+            "location" : {
+                "@type" : "Place",
+                "name" : "Artveldehogeschool Campus Kantienberg",
+                "address": {
+                    "@type" : "PostalAddress",
+                    "streetAddress" : "Voetweg 66",
+                    "addressLocality" : "Ghent, Belgium",
+                    "postalCode" : "9000"
+                }
+            }
+        }
+        </script>
+    </head>
+    <body>
+        {% partial "hero-big" %}
+        
+        {% page %}
+
+        <div class="section section-blue">
+            <hr class="{{ this.page.title == 'Hackathon' ? 'hr-dark' : this.page.title == 'About' ? 'hr-white' : 'hr-light' }}" />
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-xs-12">
+                        <h3><img src="{{ 'assets/svg/enveloppe.svg'|theme }}" class="mail-icon"> SCHRIJF JE IN OP ONZE NIEUWSBRIEF</h3>
+                    </div>
+                    <div class="col-lg-6 col-xs-12">
+                        <form class="subscribe-form">
+                            <input type="email" placeholder="E-mail adres" class="required"><input type="submit" value="STUUR">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+         {% partial "footer" %}
+        
+        <!-- Scripts -->
+        <script src="{{ [
+            'assets/vendor/jquery/dist/jquery.min.js',
+            'assets/vendor/bootstrap/dist/js/bootstrap.min.js',
+            'assets/vendor/pgwslider/pgwslider.min.js',
+            'assets/javascript/app.js'
+        ]|theme }}"></script>
+    </body>
+</html>

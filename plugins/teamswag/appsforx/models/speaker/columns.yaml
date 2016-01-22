@@ -1,0 +1,29 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: Name
+
+    priority:
+        label: Priority
+
+    twitter:
+        label: Twitter
+
+    linkedIn:
+        label: linkedIn
+
+    function:
+        label: function
+
+    organisation:
+        label: organisation
+
+    sessions:
+      label: Sessions
+      relation: sessions
+      select: name
+      

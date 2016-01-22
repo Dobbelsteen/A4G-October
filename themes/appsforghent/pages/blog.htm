@@ -1,0 +1,39 @@
+title = "Niews"
+url = "/nieuwspost/:slug"
+layout = "default"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "nieuws/category"
+==
+<div id="page-intro" class="section section-white">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-4 hidden-xs">
+                <img class="side-img"  src="{{ 'assets/svg/inschrijven_links.svg'|theme }}">
+            </div>
+            <div class="col-md-4 col-xs-12">
+                <h1>&lt;NIEWS/&gt;</h1>
+            </div>
+            <div class="col-md-4 hidden-xs">
+                <img class="side-img" src="{{ 'assets/svg/inschrijven_rechts.svg'|theme }}">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="news-tabs">
+    <div class="container">
+        <div class="news-tab active">
+            <img src="{{ 'assets/svg/twitter.svg'|theme }}"> Blog
+        </div>
+        <div class="news-tab">
+            <img src="{{ 'assets/svg/twitter.svg'|theme }}"> <a href="{{ 'twitter'|page }}">Twitterfeed</a>
+        </div>
+    </div>
+</div>
+<div id="news-content" class="section section-light">
+    <div class="container">
+         {% component 'blogPost' %}
+    </div>
+</div>

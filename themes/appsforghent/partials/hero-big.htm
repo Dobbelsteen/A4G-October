@@ -1,0 +1,31 @@
+description = "Hero of the homepage"
+==
+<nav class="navbar visible-xs-block">
+    <div class="nav-container">
+        <span class="logo-top"><img src="{{ 'assets/svg/logo.svg'|theme }}"></span>
+        <span class="pull-right nav-toggle">
+            <a href="#" id="nav-toggle"><i class="fa fa-bars fa-3x"></i></a>
+        </span>
+        <div class="nav-mobile-links">
+            <a href="{{ 'home'|page }}"      class="{{ this.page.title == 'Home' ? 'active' : '' }}">Home</a>
+            <a href="{{ 'about'|page }}"     class="{{ this.page.title == 'About' ? 'active' : '' }}">About</a>
+            <a href="{{ 'nieuws'|page }}"      class="{{ this.page.title == 'Nieuws' ? 'active' : '' }}">Nieuws</a>
+            <a href="{{ 'showcases'|page }}" class="{{ this.page.title == 'Showcases' ? 'active' : '' }}">Showcases</a>
+            <a href="{{ 'hackathon'|page }}" class="{{ this.page.title == 'Hackathon' ? 'active' : '' }}">Hackathon</a>
+            <a href="{{ 'library'|page }}"   class="{{ this.page.title == 'Library' ? 'active' : '' }}">Library</a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-fixed-top hidden-xs">
+    <div class="nav-container">
+        <span class="logo-top"><img src="{{ 'assets/svg/logo.svg'|theme }}"></span>
+        <span class="pull-right nav-links">
+            <a href="{{ 'home'|page }}"      class="{{ this.page.title == 'Home' ? 'active' : '' }}">Home</a>
+            <a href="{{ 'about'|page }}"     class="{{ this.page.title == 'About' ? 'active' : '' }}">About</a>
+            <a href="{{ 'nieuws'|page }}"      class="{{ this.page.title == 'Nieuws' ? 'active' : '' }}">Nieuws</a>
+            <a href="{{ 'showcases'|page }}" class="{{ this.page.title == 'Showcases' ? 'active' : '' }}">Showcases</a>
+            <a href="{{ 'hackathon'|page }}" class="{{ this.page.title == 'Hackathon' ? 'active' : '' }}">Hackathon</a>
+            <a href="{{ 'library'|page }}"   class="{{ this.page.title == 'Library' ? 'active' : '' }}">Library</a>
+        </span>
+    </div>
+</nav>

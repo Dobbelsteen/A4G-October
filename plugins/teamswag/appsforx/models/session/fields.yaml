@@ -1,0 +1,76 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Name
+        type: text
+        span: left
+      
+    slug:
+        label: Slug
+        span: right
+        placeholder: slug
+        preset:
+            field: name
+            type: slug
+            
+    Location:
+        label: Location
+        type: relation
+        span: left
+        
+    is_global:
+        label: Global session (will appear in all locations)
+        type: checkbox
+        default: false
+        
+    color:
+        label: Color
+        type: colorpicker
+
+    start_time:
+        label: Start time
+        type: datepicker
+
+    duration:
+        label: Duration
+        type: number
+
+    descr:
+      label: Description
+      cssClass: field-slim
+      type: codeeditor
+      language: markdown
+      showGutter: false
+      wrapWords: true
+      fontSize: 13
+      margin: 15
+
+    niveau:
+      label: Niveau
+      type: dropdown
+          #Beginner: Beginner
+          #Intermediate: Intermediate
+          #Advanced: Advanced
+          #Expert: Expert
+
+    type:
+      label: Type
+      type: dropdown
+          #Workshop: Workshop
+          #Panel: Panel
+          #Keynote: Keynote
+          #Hackathon: Hackathon
+
+    Event:
+        label: Event
+        type: relation
+
+    speakers:
+        label: Speakers
+        type: relation
+        nameFrom: name
+        
+

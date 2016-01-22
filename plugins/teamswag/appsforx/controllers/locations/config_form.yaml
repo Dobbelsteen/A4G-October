@@ -1,0 +1,27 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Location
+
+# Model Form Field configuration
+form: $/teamswag/appsforx/models/location/fields.yaml
+
+# Model Class name
+modelClass: Teamswag\Appsforx\Models\Location
+
+# Default redirect location
+defaultRedirect: teamswag/appsforx/locations
+
+# Create page
+create:
+    title: Create Location
+    redirect: teamswag/appsforx/locations/update/:id
+    redirectClose: teamswag/appsforx/locations
+
+# Update page
+update:
+    title: Edit Location
+    redirect: teamswag/appsforx/locations
+    redirectClose: teamswag/appsforx/locations

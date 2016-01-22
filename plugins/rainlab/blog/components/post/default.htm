@@ -1,0 +1,25 @@
+{% set post = __SELF__.post %}
+
+<div class="news-post">
+    <div class="news-post-image">
+        {% if post.featured_images.count %}
+            <img class="featured-img" src="{{ post.featured_images[0].path }}">     
+        {% else %}     
+            <img class="featured-img" src="{{ post.featured_images[0].path }}">     
+        {% endif %}
+        <a class="news-post-share light" href="https://twitter.com/appsforghent"><img src="{{ 'assets/svg/twitter.svg'|theme }}"> Deel via Twitter</a>
+        <a class="news-post-share light" href="https://www.facebook.com/AppsForGhent/"><img src="{{ 'assets/svg/facebook.svg'|theme }}"> Deel via Facebook</a>
+    </div>
+    <div class="news-post-content-container">
+        <div class="news-post-content">
+            <h4>{{ post.title|raw }}</h4>
+            <p>{{ post.content_html|raw }}</p>
+            <p class="news-post-date">
+                {% for category in post.categories %}
+                    <span class="chip chip-grey chip-small light">{{ category.name }}</span>
+                {% endfor %}
+                Gepost op {{ post.published_at|date("d/m/Y") }}
+            </p>
+        </div>
+    </div>
+</div>

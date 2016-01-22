@@ -1,0 +1,14 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Event name
+        type: text
+        
+    start_date:
+        label: Start Time
+        
+    end_date:
+        label: End Time

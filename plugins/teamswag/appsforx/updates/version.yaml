@@ -1,0 +1,12 @@
+1.0.1:
+    - Executing first migrations.
+    - create_events_table.php
+    - create_sessions_table.php
+    - create_session_speaker_pivot_table.php
+    - create_locations_table.php
+1.0.2:
+    - Update sessions and speakers table.
+    - update_sessions_table.php
+    - update_speakers_table.php
+    
+    

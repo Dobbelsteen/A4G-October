@@ -1,0 +1,25 @@
+{
+  "name": "A4G",
+  "version": "0.0.1",
+  "description": "One pager for Apps for Ghent",
+  "license": "ISC",
+  "authors": [
+    {
+      "name": "Sander Meert",
+      "email": "sandermeert@openknowledge.be"
+    }
+  ],
+  "devDependencies": {
+    "bower": "^1.7.2",
+    "gulp": "^3.8.10",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.1",
+    "gulp-util": "^3.0.7"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "homepage": ""
+}

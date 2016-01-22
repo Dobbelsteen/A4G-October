@@ -1,0 +1,43 @@
+{% set posts = __SELF__.posts %}
+    
+{% for id, post in posts %}
+<div class="news-post">
+    <div class="news-post-image">
+        {% if post.featured_images.count %}
+            <a class="overlay" href="{{ 'blog'|page({ slug: post.slug }) }}" style="background-image: url('{{ post.featured_images[0].path }}')"></a>            
+        {% else %}     
+            <a class="overlay" href="{{ 'blog'|page({ slug: post.slug }) }}" style="background-image: url('{{ 'assets/images/blog.png'|theme }}')"></a>
+        {% endif %}
+    </div>
+    <div class="news-post-content-container">
+        <div class="news-post-content">
+            <h4>{{ post.title|raw }}</h4>
+            <p>{{ post.excerpt|raw }}</p>
+            <p class="news-post-date">
+                {% for category in post.categories %}
+                    <span class="chip chip-grey chip-small light">{{ category.name }}</span>
+                {% endfor %}
+                Gepost op {{ post.published_at|date("d/m/Y") }}
+            </p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+{% if posts.lastPage > 1 %}
+    <ul class="pagination">
+        {% if posts.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..posts.lastPage %}
+            <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a></li>
+        {% endfor %}
+
+        {% if posts.lastPage > posts.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}
