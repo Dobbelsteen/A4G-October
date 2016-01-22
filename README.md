@@ -12,7 +12,6 @@ First, you’ll want to update the composer requirements. Fetch the repository, 
 
 ### Step 2: Install dependencies
 
-`cd themes/appsforghent`
 `npm install`
 `bower install`
 
