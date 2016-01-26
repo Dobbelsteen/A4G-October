@@ -119,7 +119,23 @@ h4 {
   .card-image img {
     width: 100%;
     height: 250px; }
-  .card-image h4 {
+  .card-image .card-flip {
+    position: relative; }
+    .card-image .card-flip .card-frontside, .card-image .card-flip .card-backside {
+      -webkit-transition: all ease 0.5s;
+      -moz-transition: all ease 0.5s;
+      -o-transition: all ease 0.5s;
+      transition: all ease 0.5s; }
+    .card-image .card-flip .card-backside {
+      position: absolute;
+      top: 0;
+      padding: 1em;
+      z-index: -1; }
+    .card-image .card-flip:hover .card-frontside {
+      opacity: 0.03; }
+    .card-image .card-flip:hover .card-backside {
+      z-index: 1; }
+  .card-image h4, .card-image h5 {
     font-size: 18px;
     padding: 0.5em 1em 0 1em;
     margin-bottom: 0;
@@ -127,16 +143,11 @@ h4 {
     overflow: hidden;
     text-overflow: ellipsis; }
   .card-image h5 {
-    font-size: 18px;
     text-transform: uppercase;
     padding: 0 1em 0 1em;
     font-family: NeoSansLight, sans-serif;
     color: #C9CBCD;
-    margin-top: 0;
-    margin-bottom: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; }
+    margin-top: 0; }
 
 .view-more {
   padding-top: 0.5em;
@@ -304,12 +315,20 @@ footer {
 #hackathon-section {
   margin-top: 0; }
 
-#page-intro .row {
-  height: 90%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+#page-intro.bg-container {
+  background: url("../png/bg.png") no-repeat center center;
+  background-size: cover; }
+
+#page-intro .container {
+  height: 350px; }
+  #page-intro .container .row {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    #page-intro .container .row:nth-of-type(2) {
+      height: 30px; }
 
 #site-info .info-container {
   margin-top: 20px; }
@@ -402,16 +421,18 @@ footer {
       display: table-cell;
       vertical-align: top;
       width: 30%;
+      height: 250px;
       position: relative; }
       #news-content .container .news-post .news-post-image .featured-img {
         width: 100%; }
       #news-content .container .news-post .news-post-image .overlay {
         position: absolute;
+        z-index: 10;
         background-size: cover;
         background-position: center;
         top: 0;
         width: 100%;
-        height: 100%; }
+        height: 250px; }
       #news-content .container .news-post .news-post-image .news-post-share {
         display: block;
         margin-top: 1em;
@@ -487,8 +508,7 @@ hr {
     height: 25px;
     /* height of the ornament */
     position: relative;
-    top: -1px;
-    /* half the height of the ornament */ }
+    top: -1px; }
   hr.hr-white:after {
     background: url("../svg/spacers/lip-light.svg") no-repeat top center; }
   hr.hr-blue:after {

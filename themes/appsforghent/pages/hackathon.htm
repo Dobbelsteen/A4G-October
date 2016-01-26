@@ -6,7 +6,7 @@ is_hidden = 0
 <div id="site-intro" class="section section-white">
     <div class="container text-center">
         <img class="intro-logo" src="{{ 'assets/svg/mapps_logo.svg'|theme }}">
-        <h1>#MAPPSFORGHENT</h1>
+        <h1>#MAPPS<font class="light">FOR</font>GHENT</h1>
         <h2>'t is wa de mapps maat...</h2>
         <span class="chip chip-red light">Zaterdag 19 maart 2016</span>
         <span class="chip chip-blue light">GENT</span>
@@ -265,3 +265,10 @@ is_hidden = 0
         </div>
     </div>
 </div>
+
+{% put scripts %}
+	<script src="{{ [
+        'assets/vendor/pgwslider/pgwslider.min.js',
+        'assets/javascript/hackathon.js'
+    ]|theme }}"></script>
+{% endput %}

@@ -24,7 +24,7 @@ description = "One Pager Layout"
         <meta name="twitter:url" content="{{ url_full() }}" />
         <link rel="icon" type="image/x-icon" href="{{ 'assets/favicon.ico'|theme }}" />
         <link href="{{ 'assets/css/a4g.css'|theme }}" rel="stylesheet">
-         <script type="application/ld+json">
+        <script type="application/ld+json">
         {
             "@context" : "http://schema.org",
             "@type" : "Event",
@@ -49,31 +49,18 @@ description = "One Pager Layout"
         {% partial "hero-big" %}
         
         {% page %}
-
-        <div class="section section-blue">
-            <hr class="{{ this.page.title == 'Hackathon' ? 'hr-dark' : this.page.title == 'About' ? 'hr-white' : 'hr-light' }}" />
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-xs-12">
-                        <h3><img src="{{ 'assets/svg/enveloppe.svg'|theme }}" class="mail-icon"> SCHRIJF JE IN OP ONZE NIEUWSBRIEF</h3>
-                    </div>
-                    <div class="col-lg-6 col-xs-12">
-                        <form class="subscribe-form">
-                            <input type="email" placeholder="E-mail adres" class="required"><input type="submit" value="STUUR">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
         
-         {% partial "footer" %}
+        {% partial "newsletter" %}
+        
+        {% partial "footer" %}
         
         <!-- Scripts -->
         <script src="{{ [
             'assets/vendor/jquery/dist/jquery.min.js',
             'assets/vendor/bootstrap/dist/js/bootstrap.min.js',
-            'assets/vendor/pgwslider/pgwslider.min.js',
             'assets/javascript/app.js'
         ]|theme }}"></script>
+        
+        {% placeholder scripts %}
     </body>
 </html>

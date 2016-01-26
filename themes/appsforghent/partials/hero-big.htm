@@ -1,5 +1,11 @@
 description = "Hero of the homepage"
 ==
+function onStart()
+{
+   $page_title = $this['page_title'];
+   $page_subtitle = $this['page_subtitle'];
+}
+==
 <nav class="navbar visible-xs-block">
     <div class="nav-container">
         <span class="logo-top"><img src="{{ 'assets/svg/logo.svg'|theme }}"></span>
@@ -9,7 +15,7 @@ description = "Hero of the homepage"
         <div class="nav-mobile-links">
             <a href="{{ 'home'|page }}"      class="{{ this.page.title == 'Home' ? 'active' : '' }}">Home</a>
             <a href="{{ 'about'|page }}"     class="{{ this.page.title == 'About' ? 'active' : '' }}">About</a>
-            <a href="{{ 'nieuws'|page }}"      class="{{ this.page.title == 'Nieuws' ? 'active' : '' }}">Nieuws</a>
+            <a href="{{ 'nieuws'|page }}"    class="{{ this.page.title == 'Nieuws' ? 'active' : '' }}">Nieuws</a>
             <a href="{{ 'showcases'|page }}" class="{{ this.page.title == 'Showcases' ? 'active' : '' }}">Showcases</a>
             <a href="{{ 'hackathon'|page }}" class="{{ this.page.title == 'Hackathon' ? 'active' : '' }}">Hackathon</a>
             <a href="{{ 'library'|page }}"   class="{{ this.page.title == 'Library' ? 'active' : '' }}">Library</a>
@@ -23,10 +29,33 @@ description = "Hero of the homepage"
         <span class="pull-right nav-links">
             <a href="{{ 'home'|page }}"      class="{{ this.page.title == 'Home' ? 'active' : '' }}">Home</a>
             <a href="{{ 'about'|page }}"     class="{{ this.page.title == 'About' ? 'active' : '' }}">About</a>
-            <a href="{{ 'nieuws'|page }}"      class="{{ this.page.title == 'Nieuws' ? 'active' : '' }}">Nieuws</a>
+            <a href="{{ 'nieuws'|page }}"    class="{{ this.page.title == 'Nieuws' ? 'active' : '' }}">Nieuws</a>
             <a href="{{ 'showcases'|page }}" class="{{ this.page.title == 'Showcases' ? 'active' : '' }}">Showcases</a>
             <a href="{{ 'hackathon'|page }}" class="{{ this.page.title == 'Hackathon' ? 'active' : '' }}">Hackathon</a>
             <a href="{{ 'library'|page }}"   class="{{ this.page.title == 'Library' ? 'active' : '' }}">Library</a>
         </span>
     </div>
 </nav>
+{% if page_title %}
+<div id="page-intro" class="section section-white bg-container ">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1>&lt;{{ page_title }}/&gt;</h1>
+                    </div>
+                </div>
+                {% if page_subtitle %}
+                <div class="row">
+                    <div class="col-xs-8 col-md-3">
+                        <h3>{{ page_subtitle }}</h3>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endif %}

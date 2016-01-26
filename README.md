@@ -31,7 +31,7 @@ For your local development server, you’ll want to change the config/database f
 You can now access your webpage from the root of your project, and the backend via `root/backend`
 
 Default credentials are:  
-Username: Admin  
-Password: Admin  
+Username: admin  
+Password: admin  
 
 It is advised you change these ASAP.

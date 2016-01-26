@@ -5,20 +5,12 @@ is_hidden = 0
 
 [showcases]
 ==
-<div id="page-intro" class="section section-white">
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-xs-12">
-                <h1>&lt;SHOWCASES/&gt;</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-8 col-md-3">
-                <h3>De beste apps die gebruik maken van onze datasets</h3>
-            </div>
-        </div>
-    </div>
-</div>
+function onStart()
+{
+    $this['page_title'] = 'SHOWCASES';
+    $this['page_subtitle'] = 'De beste apps die gebruik maken van onze datasets';
+}
+==
 <div id="showcase-content" class="section section-light">
     <hr class="hr-white" />
     <div class="container">
