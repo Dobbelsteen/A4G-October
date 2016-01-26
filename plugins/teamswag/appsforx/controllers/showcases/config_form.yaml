@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Showcase
+
+# Model Form Field configuration
+form: $/teamswag/appsforx/models/showcase/fields.yaml
+
+# Model Class name
+modelClass: Teamswag\Appsforx\Models\Showcase
+
+# Default redirect location
+defaultRedirect: teamswag/appsforx/showcases
+
+# Create page
+create:
+    title: Create Showcase
+    redirect: teamswag/appsforx/showcases/update/:id
+    redirectClose: teamswag/appsforx/showcases
+
+# Update page
+update:
+    title: Edit Showcase
+    redirect: teamswag/appsforx/showcases
+    redirectClose: teamswag/appsforx/showcases
+
+# Preview page
+preview:
+    title: Preview Showcase

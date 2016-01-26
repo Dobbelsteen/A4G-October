@@ -1,0 +1,47 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Showcase Naam
+        type: text
+
+    priority:
+        label: Priority
+        type: number
+
+    description:
+        label: Beschrijving
+        cssClass: field-slim
+        showGutter: false
+        wrapWords: true
+        fontSize: 13
+        margin: 15
+
+    team_name:
+        label: Teamnaam
+        type: text
+
+    team_members:
+        label: Teamleden
+        type: text
+
+    datasets:
+        label: Datasets
+        type: text
+
+    url_presentation:
+        label: Url presentatie
+        type: text
+        
+    url_website:
+        label: Url App
+        type: text
+
+    avatar:
+        label: Avatar
+        type: fileupload
+        mode: image
+        imageWidth: 200
+        imageHeight: 200

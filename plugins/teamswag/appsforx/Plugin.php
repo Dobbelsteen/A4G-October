@@ -29,18 +29,14 @@ class Plugin extends PluginBase
     public function registerPermissions()
     {
         return [
-            'teamswag.appsforx.access_events' => ['tab' => 'Events', 'label' => 'teamswag.appsforx::lang.event.access_events'],
-            'teamswag.appsforx.access_speakers' => ['tab' => 'Speaker', 'label' => 'teamswag.appsforx::lang.event.access_speakers']
+            'teamswag.appsforx.access_showcases' => ['tab' => 'Showcase', 'label' => 'teamswag.appsforx::lang.event.access_showcases']
         ];
     }
 
     public function registerComponents()
     {
         return [
-            'Teamswag\Appsforx\Components\Events' => 'events',
-            'Teamswag\Appsforx\Components\Speakers' => 'speakers',
-            'Teamswag\Appsforx\Components\Sessions' => 'sessions',
-            'Teamswag\Appsforx\Components\Event' => 'event'
+            'Teamswag\Appsforx\Components\Showcases' => 'showcases'
         ];
     }
 
@@ -54,28 +50,16 @@ class Plugin extends PluginBase
         return [
             'appsforx' => [
                 'label'       => 'Appsfor X',
-                'url'         => Backend::url('teamswag/appsforx/events'),
+                'url'         => Backend::url('teamswag/appsforx/showcases'),
                 'icon'        => 'icon-pencil',
                 'permissions' => ['teamswag.appsforx.*'],
                 'order'       => 500,
 
                 'sideMenu' => [
                     'events' => [
-                        'label'       => 'Events',
+                        'label'       => 'Showcases',
                         'icon'        => 'icon-copy',
-                        'url'         => Backend::url('teamswag/appsforx/events'),
-                        'permissions' => ['* ']
-                    ],
-                    'sessions' => [
-                        'label'       => 'Sessions',
-                        'icon'        => 'icon-copy',
-                        'url'         => Backend::url('teamswag/appsforx/sessions'),
-                        'permissions' => ['* ']
-                    ],
-                    'speakers' => [
-                        'label'       => 'Speakers',
-                        'icon'        => 'icon-copy',
-                        'url'         => Backend::url('teamswag/appsforx/speakers'),
+                        'url'         => Backend::url('teamswag/appsforx/showcases'),
                         'permissions' => ['* ']
                     ],
                     'locations' => [

@@ -1,0 +1,19 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: Name
+
+    priority:
+        label: Priority
+
+    team_name:
+        label: Team Naam
+
+    datasets:
+        label: Datasets
+
+      

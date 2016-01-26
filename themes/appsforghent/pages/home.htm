@@ -3,6 +3,8 @@ url = "/"
 layout = "default"
 is_hidden = 0
 
+[showcases]
+showcasesPerPage = 3
 [blogPosts]
 pageNumber = 1
 postsPerPage = 3
@@ -46,7 +48,7 @@ postPage = "nieuws/post"
             <h2 class="text-center">&lt;NIEUWS/&gt;</h2>
             <div class="row info-cards">
                 {% for id, post in posts %}
-                <div class="col-md-4 col-xs-12">
+                <div class="col-sm-4 col-xs-12">
                     <div class="card-white card-image">
                         <div class="news-post-image">
                             {% if post.featured_images.count %}
@@ -67,31 +69,11 @@ postPage = "nieuws/post"
             
             <h2 class="text-center">&lt;SHOWCASES/&gt;</h2>
             <div class="row info-cards">
-                <div class="col-md-4 col-xs-12">
-                    <div class="card-white card-image">
-                        <img src="{{ 'assets/svg/A4G.svg'|theme }}">
-                        <h4>Welk boek past bij u?</h4>
-                        <h5>UGENT Media</h5>
-                    </div>
-                </div>
-                <div class="col-md-4 col-xs-12">
-                    <div class="card-white card-image">                        
-                        <img src="{{ 'assets/svg/A4G.svg'|theme }}">
-                        <h4>Book-a-date</h4>
-                        <h5>B.L.Y.C.</h5>
-                    </div>
-                </div>
-                <div class="col-md-4 col-xs-12">
-                    <div class="card-white card-image">
-                        <img src="{{ 'assets/svg/A4G.svg'|theme }}">
-                        <h4>Bib App</h4>
-                        <h5>Lucodi</h5>
-                    </div>
-                </div>
+                {% component 'showcases' %}
             </div>
             
             <div class="view-more">
-                <span class="light pull-right"><a href="">Alles weergeven &gt;</a></span>
+                <span class="light pull-right"><a href="{{ 'showcases'|page }}">Alles weergeven &gt;</a></span>
             </div>
             
         </div>
@@ -114,12 +96,12 @@ postPage = "nieuws/post"
     <div class="container card-data-rows">
         <h2 class="text-center">&lt;OPEN DATA LIBRARY/&gt;</h2>
         <div class="row">
-            <div class="col-xs-12 col-md-6">
+            <div class="col-xs-12 col-sm-6">
                 <div class="card-white card-featured">   
                     <h4>Feature</h4>
                 </div>
             </div>
-            <div class="col-xs-12 col-md-6">
+            <div class="col-xs-12 col-sm-6">
                 <div class="row">
                     <div class="col-xs-6">
                         <div class="card-white">   
@@ -148,22 +130,22 @@ postPage = "nieuws/post"
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3 col-xs-6">
+            <div class="col-sm-3 col-xs-6">
                 <div class="card-white">   
                     <h4>Hey</h4>
                 </div>
             </div>
-            <div class="col-md-3 col-xs-6">
+            <div class="col-sm-3 col-xs-6">
                 <div class="card-white">   
                     <h4>Hey</h4>
                 </div>
             </div>
-            <div class="col-md-3 col-xs-6">
+            <div class="col-sm-3 col-xs-6">
                 <div class="card-white">   
                     <h4>Hey</h4>
                 </div>
             </div>
-            <div class="col-md-3 col-xs-6">
+            <div class="col-sm-3 col-xs-6">
                 <div class="card-white">   
                     <h4>Hey</h4>
                 </div>

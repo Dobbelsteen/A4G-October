@@ -1,0 +1,19 @@
+{% set showcases = __SELF__.showcases %}
+
+{% for showcase in showcases %}
+<div class="col-sm-4 col-xs-12">
+    <div class="card-white card-image">        
+            {% if showcase.avatar.path %}
+                <span class="overlay" style="background-image: url('{{ showcase.avatar.path }}')"></span>            
+            {% else %}     
+                <span class="overlay" style="background-image: url('{{ 'assets/images/blog.png'|theme }}')"></span>
+            {% endif %}             
+        <!--<img src="{{ showcase.avatar.thumb(250, auto) }}">-->
+        <h4>{{ showcase.name }}</h4>
+        <h5>{{ (showcase.team_name?showcase.team_name:'No team name') }}</h5>
+    </div>
+</div>
+{% endfor %}
+
+
+

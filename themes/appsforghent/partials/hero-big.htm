@@ -18,7 +18,8 @@ description = "Hero of the homepage"
 </nav>
 <nav class="navbar-fixed-top hidden-xs">
     <div class="nav-container">
-        <span class="logo-top"><img src="{{ 'assets/svg/logo.svg'|theme }}"></span>
+        <span class="logo-top hidden-sm"><img src="{{ 'assets/svg/logo.svg'|theme }}"></span>
+        <span class="logo-top-sm visible-sm-inline"><img src="{{ 'assets/svg/A4G.svg'|theme }}"></span>
         <span class="pull-right nav-links">
             <a href="{{ 'home'|page }}"      class="{{ this.page.title == 'Home' ? 'active' : '' }}">Home</a>
             <a href="{{ 'about'|page }}"     class="{{ this.page.title == 'About' ? 'active' : '' }}">About</a>

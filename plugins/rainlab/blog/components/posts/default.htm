@@ -17,7 +17,7 @@
                 {% for category in post.categories %}
                     <span class="chip chip-grey chip-small light">{{ category.name }}</span>
                 {% endfor %}
-                Gepost op {{ post.published_at|date("d/m/Y") }}
+                <span class="date pull-right">Gepost op {{ post.published_at|date("d/m/Y") }}</span>
             </p>
         </div>
     </div>

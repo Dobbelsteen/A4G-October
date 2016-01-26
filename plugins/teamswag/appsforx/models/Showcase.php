@@ -3,16 +3,16 @@
 use Model;
 
 /**
- * Location Model
+ * Speaker Model
  */
-class Location extends Model
+class Showcase extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'teamswag_appsforx_locations';
+    public $table = 'teamswag_appsforx_showcases';
 
     /**
      * @var array Guarded fields
@@ -22,14 +22,21 @@ class Location extends Model
     /**
      * @var array Fillable fields
      */
-    protected $fillable = ['name', 'description'];
+    protected $fillable = [];
 
     /**
      * @var array Relations
      */
+    public $attachOne = [
+        'avatar' => ['System\Models\File', 'order' => 'sort_order'],
+        'content_images' => ['System\Models\File']
+    ]; 
 
     public $rules = [
         'name' => 'required'
     ];
 
+    public $customMessages = [
+        'required' => 'The :attribute field is required'
+    ];
 }
