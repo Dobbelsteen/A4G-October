@@ -6,7 +6,7 @@
         {% if post.featured_images.count %}
             <a class="overlay" href="{{ 'blog'|page({ slug: post.slug }) }}" style="background-image: url('{{ post.featured_images[0].path }}')"></a>            
         {% else %}     
-            <a class="overlay" href="{{ 'blog'|page({ slug: post.slug }) }}" style="background-image: url('{{ 'assets/images/blog.png'|theme }}')"></a>
+            <a class="overlay" href="{{ 'blog'|page({ slug: post.slug }) }}" style="background-image: url('{{ 'assets/png/og_logo.png'|theme }}')"></a>
         {% endif %}
     </div>
     <div class="news-post-content-container">

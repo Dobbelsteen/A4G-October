@@ -2,5 +2,6 @@
     - Executing first migrations.
     - create_showcases_table.php
     - create_locations_table.php
+    - seed_tables.php
     
     

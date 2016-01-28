@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('author')->index();
             $table->text('excerpt')->nullable();
             $table->text('content')->nullable();
+            $table->text('content_html')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->boolean('published')->default(false);
             $table->timestamps();
