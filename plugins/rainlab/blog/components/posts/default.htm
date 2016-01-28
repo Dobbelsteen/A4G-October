@@ -26,6 +26,7 @@
 
 
 {% if posts.lastPage > 1 %}
+<div class="pagination-container">
     <ul class="pagination">
         {% if posts.currentPage > 1 %}
             <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
@@ -40,4 +41,5 @@
             <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
         {% endif %}
     </ul>
+</div>
 {% endif %}

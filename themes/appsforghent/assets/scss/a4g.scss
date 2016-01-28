@@ -665,6 +665,24 @@ footer {
             border-bottom: 2px solid $color-light-dark; 
             margin-bottom: 2em; 
             
+            .news-post-share {
+                display: block;
+                margin-top: 1em;
+                margin-left: 2em;
+                
+                &:first-of-type {
+                    margin-top: 2em;
+                }
+                
+                &:last-of-type {
+                    margin-bottom: 2em;
+                }
+                
+                &:hover {
+                    color: $font-color-dark;
+                }
+            }
+            
             .news-post-image {
                 display: table-cell;
                 vertical-align: top;
@@ -679,29 +697,14 @@ footer {
                 .overlay {
                     position: absolute;
                     z-index: 10;
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                    -o-background-size: cover;
                     background-size: cover;
-                    background-position: center;
+                    background-position: center center;
                     top: 0;
                     width: 100%;
                     height: 250px; 
-                }
-                
-                .news-post-share {
-                    display: block;
-                    margin-top: 1em;
-                    margin-left: 2em;
-                    
-                    &:first-of-type {
-                        margin-top: 2em;
-                    }
-                    
-                    &:last-of-type {
-                        margin-bottom: 2em;
-                    }
-                    
-                    &:hover {
-                        color: $font-color-dark;
-                    }
                 }
             }
             
@@ -739,9 +742,52 @@ footer {
             &:after {
                 clear: both;
             }
+            
+            // Mobile version of news posts overview
+            @media screen and (max-width: 767px) {            
+                .news-post-image {
+                    width: 100%;   
+                    
+                    .overlay {
+                        top: auto;
+                    }
+                }
+                
+                .news-post-content-container {
+                    display: table-row;
+                    width: 100%;   
+                }
+            }
         }
     }
 }
+
+/**
+ * Bootstrap pagination overrides
+ */
+.pagination-container {
+    text-align: center;
+    
+    .pagination {
+        border-radius: 0!important;
+        
+        li {
+            a {
+                border-radius: 0;
+                color: $font-color-alt;
+            }
+            
+            &.active {
+                a {
+                    color: $color-white;
+                    background-color: $color-blue;
+                    border-color: $color-blue;
+                }
+            }
+        }
+    }
+}
+
 
 #showcase-content {
     .container {

@@ -433,6 +433,16 @@ footer {
     border-right: 2px solid #e3e5e5;
     border-bottom: 2px solid #e3e5e5;
     margin-bottom: 2em; }
+    #news-content .container .news-post .news-post-share {
+      display: block;
+      margin-top: 1em;
+      margin-left: 2em; }
+      #news-content .container .news-post .news-post-share:first-of-type {
+        margin-top: 2em; }
+      #news-content .container .news-post .news-post-share:last-of-type {
+        margin-bottom: 2em; }
+      #news-content .container .news-post .news-post-share:hover {
+        color: #666666; }
     #news-content .container .news-post .news-post-image {
       display: table-cell;
       vertical-align: top;
@@ -444,21 +454,14 @@ footer {
       #news-content .container .news-post .news-post-image .overlay {
         position: absolute;
         z-index: 10;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
         background-size: cover;
-        background-position: center;
+        background-position: center center;
         top: 0;
         width: 100%;
         height: 250px; }
-      #news-content .container .news-post .news-post-image .news-post-share {
-        display: block;
-        margin-top: 1em;
-        margin-left: 2em; }
-        #news-content .container .news-post .news-post-image .news-post-share:first-of-type {
-          margin-top: 2em; }
-        #news-content .container .news-post .news-post-image .news-post-share:last-of-type {
-          margin-bottom: 2em; }
-        #news-content .container .news-post .news-post-image .news-post-share:hover {
-          color: #666666; }
     #news-content .container .news-post .news-post-content-container {
       display: table-cell;
       vertical-align: top;
@@ -481,6 +484,29 @@ footer {
               margin-bottom: 1em; } }
     #news-content .container .news-post:after {
       clear: both; }
+    @media screen and (max-width: 767px) {
+      #news-content .container .news-post .news-post-image {
+        width: 100%; }
+        #news-content .container .news-post .news-post-image .overlay {
+          top: auto; }
+      #news-content .container .news-post .news-post-content-container {
+        display: table-row;
+        width: 100%; } }
+
+/**
+ * Bootstrap pagination overrides
+ */
+.pagination-container {
+  text-align: center; }
+  .pagination-container .pagination {
+    border-radius: 0 !important; }
+    .pagination-container .pagination li a {
+      border-radius: 0;
+      color: #00DBC0; }
+    .pagination-container .pagination li.active a {
+      color: #FFF;
+      background-color: #00DBC0;
+      border-color: #00DBC0; }
 
 #showcase-content .container {
   margin-top: 20px; }
