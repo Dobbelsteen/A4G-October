@@ -21,3 +21,5 @@ selenium.php
 /node_modules/*
 /themes/appsforghent/vendor
 /themes/appsforghent/vendor/*
+/storage
+/storage/*
