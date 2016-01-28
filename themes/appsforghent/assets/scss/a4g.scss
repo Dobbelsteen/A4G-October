@@ -97,7 +97,7 @@ p {
 }
 
 h1 {
-    font-size: 4em;  
+    font-size: 3.7em;  
     margin-bottom: 30px;
 }
 
@@ -470,22 +470,24 @@ footer {
         text-transform: uppercase;
     }
     
+    .intro-logo {
+        width: 90%;
+        max-width: 600px;
+    }
+    
     @media(max-width: 767px) {
         margin-top: 0;
-        .intro-logo {
-            width: 80%;
-        }
-        
+     
         h1 {
             font-size: 3em;
+        }
+        
+        .intro-logo {
+            max-width: 300px;
         }
     }
     
     @media(max-width: 480px) { 
-        .container {
-            padding-top: 0;  
-        }
-    
         h1 {
             font-size: 2em;
         }
@@ -516,6 +518,12 @@ footer {
                 margin-top: 68px;
             }
         }
+        
+        .container {          
+            @media screen and (max-width: 480px) {
+                height: 150px;
+            }
+        }  
     }
    
     .container {    
@@ -527,8 +535,8 @@ footer {
             display:flex;
             align-items: center;
             justify-content: center;
-                    margin-right: 0;
-                margin-left: 0;
+            margin-right: 0;
+            margin-left: 0;
         
             &:nth-of-type(2) {
                 height: 30px;
@@ -537,10 +545,6 @@ footer {
         
         @media screen and (max-width: 767px) {
             height: 250px;
-        }
-        
-        @media screen and (max-width: 480px) {
-            height: 150px;
         }
     }
 }
@@ -740,12 +744,10 @@ footer {
                         margin-top: 2em;
                         color: $font-color-medium;
 
-                        @media screen and (max-width: 480px) {
-                            .date {
-                                display: block;
-                                margin-top: 1em;
-                                margin-bottom: 1em;
-                            }
+                        .date {
+                            display: block;
+                            margin-top: 0.4em;
+                            margin-bottom: 1em;
                         }
                     }
                 }
@@ -823,7 +825,8 @@ footer {
     color: $font-color-white;
     padding: 0.5em 1em;
     margin: 0.2em;
-    border-radius: 15px; 
+    border-radius: 12px; 
+    display: inline-block;
         
     &.chip-red {
         background-color: $font-color-alt-red;
@@ -886,9 +889,6 @@ hr {
 /**
  * Timetable
  */
- 
- 
-
 
 #site-programme {
     @media screen and (min-width: 768px) {

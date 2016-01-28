@@ -53,7 +53,7 @@ p {
   font-family: NeoSansLight, sans-serif; }
 
 h1 {
-  font-size: 4em;
+  font-size: 3.7em;
   margin-bottom: 30px; }
 
 h2 {
@@ -306,16 +306,17 @@ footer {
     font-family: NeoSansLight, sans-serif;
     font-size: 1em;
     text-transform: uppercase; }
+  #site-intro .intro-logo, #page-intro .intro-logo, #hackathon-section .intro-logo {
+    width: 90%;
+    max-width: 600px; }
   @media (max-width: 767px) {
     #site-intro, #page-intro, #hackathon-section {
       margin-top: 0; }
-      #site-intro .intro-logo, #page-intro .intro-logo, #hackathon-section .intro-logo {
-        width: 80%; }
       #site-intro h1, #page-intro h1, #hackathon-section h1 {
-        font-size: 3em; } }
+        font-size: 3em; }
+      #site-intro .intro-logo, #page-intro .intro-logo, #hackathon-section .intro-logo {
+        max-width: 300px; } }
   @media (max-width: 480px) {
-    #site-intro .container, #page-intro .container, #hackathon-section .container {
-      padding-top: 0; }
     #site-intro h1, #page-intro h1, #hackathon-section h1 {
       font-size: 2em; }
     #site-intro h2, #page-intro h2, #hackathon-section h2 {
@@ -335,6 +336,9 @@ footer {
     @media screen and (max-width: 480px) {
       #page-intro.bg-container h1 {
         margin-top: 68px; } }
+  @media screen and (max-width: 480px) {
+    #page-intro.bg-container .container {
+      height: 150px; } }
 
 #page-intro .container {
   height: 350px; }
@@ -351,9 +355,6 @@ footer {
   @media screen and (max-width: 767px) {
     #page-intro .container {
       height: 250px; } }
-  @media screen and (max-width: 480px) {
-    #page-intro .container {
-      height: 150px; } }
 
 #site-info .info-container {
   margin-top: 20px; }
@@ -486,11 +487,10 @@ footer {
         #news-content .container .news-post .news-post-content-container .news-post-content .news-post-date {
           margin-top: 2em;
           color: #C9CBCD; }
-          @media screen and (max-width: 480px) {
-            #news-content .container .news-post .news-post-content-container .news-post-content .news-post-date .date {
-              display: block;
-              margin-top: 1em;
-              margin-bottom: 1em; } }
+          #news-content .container .news-post .news-post-content-container .news-post-content .news-post-date .date {
+            display: block;
+            margin-top: 0.4em;
+            margin-bottom: 1em; }
     #news-content .container .news-post:after {
       clear: both; }
     @media screen and (max-width: 767px) {
@@ -531,7 +531,8 @@ footer {
   color: #FFF;
   padding: 0.5em 1em;
   margin: 0.2em;
-  border-radius: 15px; }
+  border-radius: 12px;
+  display: inline-block; }
   .chip.chip-red {
     background-color: #FF3232; }
   .chip.chip-blue {

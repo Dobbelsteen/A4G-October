@@ -40,7 +40,7 @@ fields:
         type: text
 
     avatar:
-        label: Avatar
+        label: Afbeelding
         type: fileupload
         mode: image
         imageWidth: 200
