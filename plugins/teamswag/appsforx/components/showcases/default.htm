@@ -10,11 +10,13 @@
                 <span class="overlay card-frontside" style="background-image: url('{{ 'assets/png/og_logo.png'|theme }}')"></span>
             {% endif %}   
             <div class="card-backside">
-                <p>{{ showcase.description }}</p>
-                <p>Teamleden: {{ showcase.team_members }}</p>
-                <p>Datasets: {{ showcase.datasets }}</p>
-                <p><a href="{{ showcase.url_website }}" target="_blank">App</a></p>
-                <p><a href="{{ showcase.url_presentation }}" target="_blank">Prezzie</a></p>
+                <p class="description">{{ showcase.description }}</p>
+                <p title="Teamleden"><i class="fa fa-users"></i> {{ showcase.team_members }}</p>
+                <p title="Gebruikte datasets"><i class="fa fa-file-code-o"></i>  {{ showcase.datasets }}</p>
+                <p>
+                    <a href="{{ showcase.url_website }}" title="Applicatie URL" target="_blank"><i class="fa fa-external-link fa-2x"></i></a> 
+                    <a href="{{ showcase.url_presentation }}" title="Presentatie URL" target="_blank"><i class="fa fa-desktop fa-2x"></i></a>
+                </p>
             </div>          
         </div>          
         <h4>{{ showcase.name }}</h4>

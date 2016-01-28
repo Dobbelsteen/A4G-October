@@ -131,6 +131,15 @@ h4 {
       top: 0;
       padding: 1em;
       z-index: -1; }
+      .card-image .card-flip .card-backside .description {
+        margin-bottom: 1em;
+        font-size: 18px; }
+      .card-image .card-flip .card-backside > p > i {
+        text-align: center;
+        width: 20px; }
+      .card-image .card-flip .card-backside > p > a > i {
+        margin-top: 15px;
+        margin-right: 15px; }
     .card-image .card-flip:hover .card-frontside {
       opacity: 0.03; }
     .card-image .card-flip:hover .card-backside {
@@ -335,7 +344,7 @@ footer {
         margin-top: 36px; } }
     @media screen and (max-width: 480px) {
       #page-intro.bg-container h1 {
-        margin-top: 68px; } }
+        margin-top: 26px; } }
   @media screen and (max-width: 480px) {
     #page-intro.bg-container .container {
       height: 150px; } }
@@ -384,7 +393,7 @@ footer {
   padding-bottom: 0; }
   #site-media .container {
     padding-top: 0;
-    padding-bottom: 0px; }
+    padding-bottom: 0; }
     @media (max-width: 767px) {
       #site-media .container {
         width: 100%;
@@ -508,10 +517,8 @@ footer {
         width: 100%; }
         #news-content .container .news-post .news-post-content-container .news-post-content > .news-post-date {
           position: relative;
-          margin-top: 2em;
           left: auto;
-          right: auto;
-          color: #C9CBCD; } }
+          right: auto; } }
 
 /**
  * Bootstrap pagination overrides
