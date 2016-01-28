@@ -273,14 +273,21 @@ h4 {
     }
     
     .data-type {
-        top: 1em;
-        left: 1.5em;
-        content: '</>';
+        top: 0.5em;
+        left: 1em;
+        
+        .data-subtype {
+            display: block;
+            font-family: $font-light;
+            color: $font-color-dark;
+            font-weight: normal;
+            text-transform: none;
+        }
     }
-    
+     
     .data-name {
-        bottom: 1em;
-        right: 1.5em;
+        bottom: 0.5em;
+        right: 1em;
     }
     
     @media screen and (min-width: 768px) {
@@ -301,6 +308,11 @@ h4 {
             }
         }
     }
+}
+
+.card-data-categories {
+    top: 0.5em;
+    left: 1em;
 }
 
 .light {

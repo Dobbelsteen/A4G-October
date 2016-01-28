@@ -172,13 +172,18 @@ h4 {
   font-size: 18px; }
 
 .card-data-rows .data-type {
-  top: 1em;
-  left: 1.5em;
-  content: '</>'; }
+  top: 0.5em;
+  left: 1em; }
+  .card-data-rows .data-type .data-subtype {
+    display: block;
+    font-family: NeoSansLight, sans-serif;
+    color: #666666;
+    font-weight: normal;
+    text-transform: none; }
 
 .card-data-rows .data-name {
-  bottom: 1em;
-  right: 1.5em; }
+  bottom: 0.5em;
+  right: 1em; }
 
 @media screen and (min-width: 768px) {
   .card-data-rows.library-cards > .row > div {
@@ -190,6 +195,10 @@ h4 {
       height: 100%; }
       .card-data-rows .row > div > .row:last-of-type {
         margin-bottom: 0; } }
+
+.card-data-categories {
+  top: 0.5em;
+  left: 1em; }
 
 .light {
   font-family: NeoSansLight, sans-serif; }
