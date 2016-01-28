@@ -590,7 +590,7 @@ footer {
     
     .container {
         padding-top: 0;
-        padding-bottom: 0px;
+        padding-bottom: 0;
         
         @media(max-width: 767px) {
             width: 100%;
@@ -728,6 +728,7 @@ footer {
                 display: table-cell;
                 vertical-align: top;
                 width: 70%;
+                position: relative;
 
                 .news-post-content {
                     padding: 1em 2em;
@@ -741,6 +742,10 @@ footer {
                     }
                     
                     .news-post-date {
+                        position: absolute;
+                        bottom: 0;
+                        left: 2em;
+                        right: 2em;
                         margin-top: 2em;
                         color: $font-color-medium;
 
@@ -770,6 +775,12 @@ footer {
                 .news-post-content-container {
                     display: table-row;
                     width: 100%;   
+                    
+                    .news-post-content>.news-post-date {
+                        position: relative;
+                        left: auto;
+                        right: auto;
+                    }
                 }
             }
         }

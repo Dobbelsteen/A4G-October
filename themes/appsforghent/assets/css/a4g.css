@@ -475,7 +475,8 @@ footer {
     #news-content .container .news-post .news-post-content-container {
       display: table-cell;
       vertical-align: top;
-      width: 70%; }
+      width: 70%;
+      position: relative; }
       #news-content .container .news-post .news-post-content-container .news-post-content {
         padding: 1em 2em; }
         #news-content .container .news-post .news-post-content-container .news-post-content p {
@@ -485,6 +486,10 @@ footer {
           -webkit-line-clamp: 4;
           -webkit-box-orient: vertical; }
         #news-content .container .news-post .news-post-content-container .news-post-content .news-post-date {
+          position: absolute;
+          bottom: 0;
+          left: 2em;
+          right: 2em;
           margin-top: 2em;
           color: #C9CBCD; }
           #news-content .container .news-post .news-post-content-container .news-post-content .news-post-date .date {
@@ -500,7 +505,13 @@ footer {
           top: auto; }
       #news-content .container .news-post .news-post-content-container {
         display: table-row;
-        width: 100%; } }
+        width: 100%; }
+        #news-content .container .news-post .news-post-content-container .news-post-content > .news-post-date {
+          position: relative;
+          margin-top: 2em;
+          left: auto;
+          right: auto;
+          color: #C9CBCD; } }
 
 /**
  * Bootstrap pagination overrides
