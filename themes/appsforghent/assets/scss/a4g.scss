@@ -748,7 +748,7 @@ footer {
                 .news-post-content {
                     padding: 1em 2em;
                     
-                    p {
+                    .news-post-excerpt {
                         overflow: hidden;
                         text-overflow: ellipsis;
                         display: -webkit-box;
@@ -756,7 +756,28 @@ footer {
                         -webkit-box-orient: vertical;
                     }
                     
+                    p {
+                        display: block;
+                        
+                        &.bottom-spacer {
+                            margin-bottom: 4em;
+                        }
+                    }
+                    
+                    h1 {
+                        font-size: 18px;
+                        padding: 0.5em 0;
+                        margin-top: 15px;
+                        margin-bottom: 15px;
+                        color: $font-color-alt;
+                    }
+                    
+                    ul, li {
+                        font-family: $font-light;
+                    }
+                    
                     .news-post-date {
+                        display: block;
                         position: absolute;
                         bottom: 0;
                         left: 2em;
@@ -851,7 +872,7 @@ footer {
     color: $font-color-white;
     padding: 0.5em 1em;
     margin: 0.2em;
-    border-radius: 12px; 
+    border-radius: 15px; 
     display: inline-block;
         
     &.chip-red {
@@ -874,6 +895,7 @@ footer {
         padding: 0.2em 0.5em;
         margin-right: 0.2em;
         font-size: 0.9em;
+        border-radius: 12px; 
     }
 }
 

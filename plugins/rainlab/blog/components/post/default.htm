@@ -18,6 +18,7 @@
         <div class="news-post-content">
             <h4>{{ post.title|raw }}</h4>
             <p>{{ post.content_html|raw }}</p>
+            <p class="bottom-spacer"></p>
             <p class="news-post-date">
                 {% for category in post.categories %}
                     <span class="chip chip-grey chip-small light">{{ category.name }}</span>

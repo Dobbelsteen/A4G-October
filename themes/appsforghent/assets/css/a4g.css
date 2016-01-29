@@ -488,13 +488,26 @@ footer {
       position: relative; }
       #news-content .container .news-post .news-post-content-container .news-post-content {
         padding: 1em 2em; }
-        #news-content .container .news-post .news-post-content-container .news-post-content p {
+        #news-content .container .news-post .news-post-content-container .news-post-content .news-post-excerpt {
           overflow: hidden;
           text-overflow: ellipsis;
           display: -webkit-box;
           -webkit-line-clamp: 4;
           -webkit-box-orient: vertical; }
+        #news-content .container .news-post .news-post-content-container .news-post-content p {
+          display: block; }
+          #news-content .container .news-post .news-post-content-container .news-post-content p.bottom-spacer {
+            margin-bottom: 4em; }
+        #news-content .container .news-post .news-post-content-container .news-post-content h1 {
+          font-size: 18px;
+          padding: 0.5em 0;
+          margin-top: 15px;
+          margin-bottom: 15px;
+          color: #00DBC0; }
+        #news-content .container .news-post .news-post-content-container .news-post-content ul, #news-content .container .news-post .news-post-content-container .news-post-content li {
+          font-family: NeoSansLight, sans-serif; }
         #news-content .container .news-post .news-post-content-container .news-post-content .news-post-date {
+          display: block;
           position: absolute;
           bottom: 0;
           left: 2em;
@@ -549,7 +562,7 @@ footer {
   color: #FFF;
   padding: 0.5em 1em;
   margin: 0.2em;
-  border-radius: 12px;
+  border-radius: 15px;
   display: inline-block; }
   .chip.chip-red {
     background-color: #FF3232; }
@@ -562,7 +575,8 @@ footer {
   .chip.chip-small {
     padding: 0.2em 0.5em;
     margin-right: 0.2em;
-    font-size: 0.9em; }
+    font-size: 0.9em;
+    border-radius: 12px; }
 
 a.chip:hover {
   color: #FFF; }

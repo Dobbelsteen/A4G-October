@@ -12,7 +12,7 @@
     <div class="news-post-content-container">
         <div class="news-post-content">
             <h4>{{ post.title|raw }}</h4>
-            <p>{{ post.excerpt|raw }}</p>
+            <p class="news-post-excerpt">{{ post.excerpt|raw }}</p>
             <p class="news-post-date">
                 {% for category in post.categories %}
                     <span class="chip chip-grey chip-small light">{{ category.name }}</span>
