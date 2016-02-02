@@ -13,6 +13,7 @@ First, you’ll want to update the composer requirements. Fetch the repository, 
 ### Step 2: Install dependencies
 
 `npm install`
+
 `bower install`
 
 

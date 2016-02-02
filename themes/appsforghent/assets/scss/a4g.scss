@@ -58,7 +58,8 @@ $color-dark: #231F20;
 $color-blue: #00DBC0;
 
 $font-color-white: #FFF;
-$font-color-medium: #C9CBCD;
+$font-color-med: #C9CBCD;
+$font-color-medium: darken($font-color-med, 15%);
 $font-color-dark: #666666;
 $font-color-alt: $color-blue;
 $font-color-alt-red: #FF3232;
@@ -906,13 +907,12 @@ footer {
         background-color: lighten($font-color-alt, 3%);
         
         &:hover {
-            background-color: #00bc91;
             background-color: darken($font-color-alt, 6%);
         }
     }
     
     &.chip-grey {
-        background-color: $color-medium;
+        background-color: darken($color-medium, 6%);
     }
     
     &.chip-small {

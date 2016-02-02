@@ -8,7 +8,7 @@ fields:
         type: text
 
     priority:
-        label: Priority
+        label: Prioriteit
         type: number
 
     description:
@@ -36,7 +36,11 @@ fields:
         type: text
         
     url_website:
-        label: Url App
+        label: Url applicatie
+        type: text
+        
+    url_github:
+        label: Url Github van applicatie
         type: text
 
     avatar:

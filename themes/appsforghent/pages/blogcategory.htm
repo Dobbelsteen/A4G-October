@@ -1,0 +1,34 @@
+title = "Blog Category"
+url = "/nieuws/category/:slug/:page?"
+layout = "default"
+is_hidden = 0
+
+[blogCategories]
+
+[blogPosts]
+categoryFilter = ":slug"
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "Geen nieuwsberichten"
+sortOrder = "published_at desc"
+==
+function onStart()
+{
+    $this['page_title'] = 'NIEUWS';
+    $this['header_bg'] = '/assets/banners/gewoon/banner-23.png';
+}
+
+==
+
+
+{% component 'blogCategories' %}
+
+{% component 'blogPosts' %}
+
+{% if not category %}
+    <h2>Category not found</h2>
+{% else %}
+    <h2>{{ category.name }}</h2>
+
+    {% component 'blogPosts' %}
+{% endif %}

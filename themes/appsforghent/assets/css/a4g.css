@@ -47,7 +47,7 @@ html, body, nav {
   cursor: hand; }
 
 a, a:active, a:focus {
-  color: #C9CBCD;
+  color: #a1a5a8;
   text-decoration: none; }
   a:hover, a:active:hover, a:focus:hover {
     color: #00DBC0;
@@ -157,7 +157,7 @@ h4 {
     text-transform: uppercase;
     padding: 0 1em 0 1em;
     font-family: NeoSansLight, sans-serif;
-    color: #C9CBCD;
+    color: #a1a5a8;
     margin-top: 0; }
 
 .view-more {
@@ -222,7 +222,7 @@ h4 {
   margin-right: auto; }
 
 nav {
-  border-bottom: 1px solid #C9CBCD !important; }
+  border-bottom: 1px solid #a1a5a8 !important; }
   nav .logo-top-sm {
     margin-left: 3px; }
   nav .nav-links {
@@ -272,7 +272,7 @@ footer {
   footer a {
     color: #666666; }
     footer a:hover {
-      color: #C9CBCD; }
+      color: #a1a5a8; }
   footer .row {
     margin-top: 20px;
     margin-bottom: 30px;
@@ -400,7 +400,7 @@ footer {
         padding: 0; } }
 
 #site-register {
-  color: #C9CBCD; }
+  color: #a1a5a8; }
   #site-register h2 {
     color: #00DBC0; }
 
@@ -431,7 +431,7 @@ footer {
         height: 50px;
         width: 50px; }
       #news-tabs .container .news-tab a {
-        color: #C9CBCD; }
+        color: #a1a5a8; }
         #news-tabs .container .news-tab a:hover {
           color: #666666; }
       #news-tabs .container .news-tab.active {
@@ -527,7 +527,7 @@ footer {
           left: 2em;
           right: 2em;
           margin-top: 2em;
-          color: #C9CBCD; }
+          color: #a1a5a8; }
           #news-content .container .news-post .news-post-content-container .news-post-content .news-post-date .date {
             display: block;
             margin-top: 0.4em;
@@ -585,10 +585,9 @@ footer {
   .chip.chip-light-blue {
     background-color: #00eacd; }
     .chip.chip-light-blue:hover {
-      background-color: #00bc91;
       background-color: #00bca5; }
   .chip.chip-grey {
-    background-color: #CACBCD; }
+    background-color: #babcbe; }
   .chip.chip-small {
     padding: 0.2em 0.5em;
     margin-right: 0.2em;
