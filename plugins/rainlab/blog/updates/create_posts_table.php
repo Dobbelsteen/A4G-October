@@ -15,7 +15,6 @@ class CreatePostsTable extends Migration
             $table->integer('user_id')->unsigned()->nullable()->index();
             $table->string('title')->nullable();
             $table->string('slug')->index();
-            $table->string('author')->index();
             $table->text('excerpt')->nullable();
             $table->text('content')->nullable();
             $table->text('content_html')->nullable();

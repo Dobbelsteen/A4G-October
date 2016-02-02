@@ -21,7 +21,7 @@
             <p class="bottom-spacer"></p>
             <p class="news-post-date">
                 {% for category in post.categories %}
-                    <span class="chip chip-grey chip-small light">{{ category.name }}</span>
+                    <a href="{{ 'blogcategory'|page({ slug: category.slug }) }}"  class="chip chip-grey chip-small light">{{ category.name }}</a>
                 {% endfor %}
                 &nbsp;
                 <span class="date pull-right">Gepost op {{ post.published_at|date("d/m/Y") }} door {{ post.author }}</span>

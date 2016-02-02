@@ -3,15 +3,16 @@ url = "/nieuws/category/:slug/:page?"
 layout = "default"
 is_hidden = 0
 
-[blogCategories]
-
 [blogPosts]
-categoryFilter = ":slug"
-pageNumber = "{{ :page }}"
-postsPerPage = 10
-noPostsMessage = "Geen nieuwsberichten"
-sortOrder = "published_at desc"
+categoryFilter = "{{ :slug }}"
 ==
+function onEnd()
+{
+    // Optional - set the page title to the category name
+    if ($this->category)
+        $this->page->title = $this->category->name;
+}
+
 function onStart()
 {
     $this['page_title'] = 'NIEUWS';
@@ -19,16 +20,25 @@ function onStart()
 }
 
 ==
+<div id="news-tabs">
+    <div class="container">
+        <div class="news-tab active">
+            <img src="{{ 'assets/svg/blog.svg'|theme }}"> Blog
+        </div>
+        <div class="news-tab">
+            <a href="{{ 'twitter'|page }}"><img src="{{ 'assets/svg/twitter.svg'|theme }}"> Twitter</a>
+        </div>
+    </div>
+</div>
+<div id="news-content" class="section section-light">
+    <div class="container">
+         {% if not category %}
+            <h2>Categorie niet gevonden</h2>
+        {% else %}
+            <h2>Posts onder {{ category.name }}</h2>
+            {% component 'blogPosts' %}
+        {% endif %}
+    </div>
+</div>
 
 
-{% component 'blogCategories' %}
-
-{% component 'blogPosts' %}
-
-{% if not category %}
-    <h2>Category not found</h2>
-{% else %}
-    <h2>{{ category.name }}</h2>
-
-    {% component 'blogPosts' %}
-{% endif %}

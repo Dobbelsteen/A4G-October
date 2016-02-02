@@ -32,9 +32,10 @@ class Plugin extends PluginBase
     public function registerPermissions()
     {
         return [
-            'rainlab.blog.access_posts'       => ['tab' => 'Blog', 'label' => 'rainlab.blog::lang.blog.access_posts'],
-            'rainlab.blog.access_categories'  => ['tab' => 'Blog', 'label' => 'rainlab.blog::lang.blog.access_categories'],
-            'rainlab.blog.access_other_posts' => ['tab' => 'Blog', 'label' => 'rainlab.blog::lang.blog.access_other_posts']
+            'rainlab.blog.access_posts'         => ['tab' => 'rainlab.blog::lang.blog.tab', 'label' => 'rainlab.blog::lang.blog.access_posts'],
+            'rainlab.blog.access_categories'    => ['tab' => 'rainlab.blog::lang.blog.tab', 'label' => 'rainlab.blog::lang.blog.access_categories'],
+            'rainlab.blog.access_other_posts'   => ['tab' => 'rainlab.blog::lang.blog.tab', 'label' => 'rainlab.blog::lang.blog.access_other_posts'],
+            'rainlab.blog.access_import_export' => ['tab' => 'rainlab.blog::lang.blog.tab', 'label' => 'rainlab.blog::lang.blog.access_import_export']
         ];
     }
 
@@ -49,6 +50,12 @@ class Plugin extends PluginBase
                 'order'       => 500,
 
                 'sideMenu' => [
+                    'new_post' => [
+                        'label'       => 'rainlab.blog::lang.posts.new_post',
+                        'icon'        => 'icon-plus',
+                        'url'         => Backend::url('rainlab/blog/posts/create'),
+                        'permissions' => ['rainlab.blog.access_posts']
+                    ],
                     'posts' => [
                         'label'       => 'rainlab.blog::lang.blog.posts',
                         'icon'        => 'icon-copy',
@@ -60,7 +67,7 @@ class Plugin extends PluginBase
                         'icon'        => 'icon-list-ul',
                         'url'         => Backend::url('rainlab/blog/categories'),
                         'permissions' => ['rainlab.blog.access_categories']
-                    ],
+                    ]
                 ]
             ]
         ];
@@ -105,8 +112,8 @@ class Plugin extends PluginBase
          */
         Event::listen('pages.menuitem.listTypes', function() {
             return [
-                'blog-category' => 'Blog category',
-                'all-blog-categories' => 'All blog categories'
+                'blog-category' => 'Blog Category',
+                'all-blog-categories' => 'All Blog Categories'
             ];
         });
 

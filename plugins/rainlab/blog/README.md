@@ -2,8 +2,7 @@
 
 A simple, extensible blogging platform for October CMS.
 
-A video demonstration of this plugin can be seen here:
-https://vimeo.com/97088926
+!![560x315](https://player.vimeo.com/video/97088926)
 
 ## Editing posts
 
@@ -61,7 +60,7 @@ The next example shows the basic component usage with the category filter:
     url = "/blog/category/:slug/:page?"
 
     [blogPosts]
-    categoryFilter = ":slug"
+    categoryFilter = "{{ :slug }}"
     ==
     function onEnd()
     {

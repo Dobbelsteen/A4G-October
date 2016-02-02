@@ -518,6 +518,8 @@ footer {
         #news-content .container .news-post .news-post-content-container .news-post-content a {
           color: #00DBC0;
           font-weight: 600; }
+        #news-content .container .news-post .news-post-content-container .news-post-content a.chip, #news-content .container .news-post .news-post-content-container .news-post-content a.chip:hover {
+          color: #FFF; }
         #news-content .container .news-post .news-post-content-container .news-post-content ul, #news-content .container .news-post .news-post-content-container .news-post-content li {
           font-family: NeoSansLight, sans-serif; }
         #news-content .container .news-post .news-post-content-container .news-post-content .news-post-date {
@@ -594,7 +596,7 @@ footer {
     font-size: 0.9em;
     border-radius: 12px; }
 
-a.chip:hover {
+a.chip, a.chip:hover {
   color: #FFF; }
 
 hr {

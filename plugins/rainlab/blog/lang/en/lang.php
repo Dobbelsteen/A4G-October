@@ -3,7 +3,7 @@
 return [
     'plugin' => [
         'name' => 'Blog',
-        'description' => 'A robust blogging platform.',
+        'description' => 'A robust blogging platform.'
     ],
     'blog' => [
         'menu_label' => 'Blog',
@@ -12,29 +12,37 @@ return [
         'create_post' => 'blog post',
         'categories' => 'Categories',
         'create_category' => 'blog category',
+        'tab' => 'Blog',
         'access_posts' => 'Manage the blog posts',
         'access_categories' => 'Manage the blog categories',
         'access_other_posts' => 'Manage other users blog posts',
+        'access_import_export' => 'Allowed to import and export posts',
         'delete_confirm' => 'Are you sure?',
         'chart_published' => 'Published',
         'chart_drafts' => 'Drafts',
-        'chart_total' => 'Total',
+        'chart_total' => 'Total'
     ],
     'posts' => [
         'list_title' => 'Manage the blog posts',
         'category' => 'Category',
         'hide_published' => 'Hide published',
-        'new_post' => 'New post',
+        'new_post' => 'New post'
     ],
     'post' => [
         'title' => 'Title',
         'title_placeholder' => 'New post title',
+        'content' => 'Content',
+        'content_html' => 'HTML Content',
         'slug' => 'Slug',
         'slug_placeholder' => 'new-post-slug',
         'categories' => 'Categories',
+        'author_email' => 'Author Email',
         'created' => 'Created',
+        'created_date' => 'Created date',
         'updated' => 'Updated',
+        'updated_date' => 'Updated date',
         'published' => 'Published',
+        'published_date' => 'Published date',
         'published_validation' => 'Please specify the published date',
         'tab_edit' => 'Edit',
         'tab_categories' => 'Categories',
@@ -43,15 +51,16 @@ return [
         'tab_manage' => 'Manage',
         'published_on' => 'Published on',
         'excerpt' => 'Excerpt',
+        'summary' => 'Summary',
         'featured_images' => 'Featured Images',
         'delete_confirm' => 'Do you really want to delete this post?',
         'close_confirm' => 'The post is not saved.',
-        'return_to_posts' => 'Return to posts list',
+        'return_to_posts' => 'Return to posts list'
     ],
     'categories' => [
         'list_title' => 'Manage the blog categories',
         'new_category' => 'New category',
-        'uncategorized' => 'Uncategorized',
+        'uncategorized' => 'Uncategorized'
     ],
     'category' => [
         'name' => 'Name',
@@ -61,6 +70,7 @@ return [
         'posts' => 'Posts',
         'delete_confirm' => 'Do you really want to delete this category?',
         'return_to_categories' => 'Return to the blog category list',
+        'reorder' => 'Reorder Categories'
     ],
     'settings' => [
         'category_title' => 'Category List',
@@ -88,10 +98,10 @@ return [
         'posts_no_posts' => 'No posts message',
         'posts_no_posts_description' => 'Message to display in the blog post list in case if there are no posts. This property is used by the default component partial.',
         'posts_order' => 'Post order',
-        'posts_order_decription' => 'Attribute on which the posts should be ordered',
+        'posts_order_description' => 'Attribute on which the posts should be ordered',
         'posts_category' => 'Category page',
         'posts_category_description' => 'Name of the category page file for the "Posted into" category links. This property is used by the default component partial.',
         'posts_post' => 'Post page',
-        'posts_post_description' => 'Name of the blog post page file for the "Learn more" links. This property is used by the default component partial.',
-    ],
+        'posts_post_description' => 'Name of the blog post page file for the "Learn more" links. This property is used by the default component partial.'
+    ]
 ];

@@ -12,19 +12,20 @@ return [
         'create_post' => 'blog gönderisi',
         'categories' => 'Kategoriler',
         'create_category' => 'blog kategorisi',
+        'tab' => 'Blog',
         'access_posts' => 'Gönderileri yönet',
         'access_categories' => 'Blog kategorilerini yönet',
         'access_other_posts' => 'Diğer kullanıcıların gönderilerini yönet',
         'delete_confirm' => 'Emin misiniz?',
         'chart_published' => 'Yayınlandı',
         'chart_drafts' => 'Taslaklar',
-        'chart_total' => 'Toplam',
+        'chart_total' => 'Toplam'
     ],
     'posts' => [
         'list_title' => 'Blog gönderilerini yönet',
         'category' => 'Kategori',
         'hide_published' => 'Yayınlananı gizle',
-        'new_post' => 'Yeni gönderi',
+        'new_post' => 'Yeni gönderi'
     ],
     'post' => [
         'title' => 'Başlık',
@@ -60,7 +61,7 @@ return [
         'slug_placeholder' => 'new-category-slug',
         'posts' => 'Gönderiler',
         'delete_confirm' => 'Bu kategoriyi silmek istiyor musunuz?',
-        'return_to_categories' => 'Kategori listesine dön',
+        'return_to_categories' => 'Kategori listesine dön'
     ],
     'settings' => [
         'category_title' => 'Kategori Listesi',
@@ -88,10 +89,10 @@ return [
         'posts_no_posts' => 'Gönderi mesajı yok',
         'posts_no_posts_description' => 'Eğer bir gönderi yoksa gönderi listesinde görüntülenecek mesaj. Bu özellik varsayılan kısmi bileşeni tarafından kullanılır.',
         'posts_order' => 'Gönderi Sırası',
-        'posts_order_decription' => 'Attribute on which the posts should be ordered',
+        'posts_order_description' => 'Attribute on which the posts should be ordered',
         'posts_category' => 'Kategori sayfası',
         'posts_category_description' => 'Name of the category page file for the "Posted into" category links. Bu özellik varsayılan kısmi bileşeni tarafından kullanılır.',
         'posts_post' => 'Gönderi sayfası',
-        'posts_post_description' => '"Daha fazla bilgi edinin" bağlantıları için gönderi sayfası dosyasının adı. Bu özellik varsayılan kısmi bileşeni tarafından kullanılır.',
-    ],
+        'posts_post_description' => '"Daha fazla bilgi edinin" bağlantıları için gönderi sayfası dosyasının adı. Bu özellik varsayılan kısmi bileşeni tarafından kullanılır.'
+    ]
 ];

@@ -791,6 +791,10 @@ footer {
                         color: $font-color-alt;
                         font-weight: 600;
                     }
+                   
+                    a.chip, a.chip:hover {
+                        color: $font-color-white;
+                    }
                     
                     ul, li {
                         font-family: $font-light;
@@ -923,7 +927,7 @@ footer {
     }
 }
 
-a.chip:hover {
+a.chip, a.chip:hover {
     color: $font-color-white;
 }
 

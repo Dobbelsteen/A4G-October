@@ -12,19 +12,20 @@ return [
         'create_post' => 'Blog Artikel',
         'categories' => 'Kategorien',
         'create_category' => 'Blog Kategorie',
+        'tab' => 'Blog',
         'access_posts' => 'Blog Artikel verwalten',
         'access_categories' => 'Blog Kategorien verwalten',
         'access_other_posts' => 'Blog Artikel anderer Benutzer verwalten',
         'delete_confirm' => 'Bist du sicher?',
         'chart_published' => 'Veröffentlicht',
         'chart_drafts' => 'Entwurf',
-        'chart_total' => 'Gesamt',
+        'chart_total' => 'Gesamt'
     ],
     'posts' => [
         'list_title' => 'Blog Artikel verwalten',
         'category' => 'Kategorie',
         'hide_published' => 'Veröffentlichte ausblenden',
-        'new_post' => 'Neuer Artikel',
+        'new_post' => 'Neuer Artikel'
     ],
     'post' => [
         'title' => 'Titel',
@@ -51,6 +52,7 @@ return [
     'categories' => [
         'list_title' => 'Blog Kategorien verwalten',
         'new_category' => 'Neue Kategorie',
+        'uncategorized' => 'Allgemein'
     ],
     'category' => [
         'name' => 'Name',
@@ -59,7 +61,7 @@ return [
         'slug_placeholder' => 'new-category-slug',
         'posts' => 'Posts',
         'delete_confirm' => 'Möchtest du die Kategorie wirklich löschen?',
-        'return_to_categories' => 'Zurück zur Kategorie-Übersicht.',
+        'return_to_categories' => 'Zurück zur Kategorie-Übersicht.'
     ],
     'settings' => [
         'category_title' => 'Blog Kategorie-Übersicht',
@@ -78,8 +80,8 @@ return [
         'post_category_description' => 'Name der Kategorien-Seiten-Datei für Kategorie-Links.',
         'posts_title' => 'Blog Artikel-Übersicht',
         'posts_description' => 'Stellt eine Liste der neuesten Artikel auf der Seite dar.',
-        'posts_Blättern' => 'Blättern Parameter-Name',
-        'posts_Blättern_description' => 'Der erwartete Parameter-Name welcher für Seiten verwendet wird.',
+        'posts_pagination' => 'Blättern Parameter-Name',
+        'posts_pagination_description' => 'Der erwartete Parameter-Name welcher für Seiten verwendet wird.',
         'posts_filter' => 'Kategorien-Filter',
         'posts_filter_description' => 'Bitte gebe ein Kategorien-Slug oder URL-Parameter an, mittels den die Artikel gefiltert werden. Wenn der Wert leer ist, werden alle Artikel angezeigt.',
         'posts_per_page' => 'Artikel pro Seite',
@@ -87,10 +89,10 @@ return [
         'posts_no_posts' => 'Keine Artikel Nachricht',
         'posts_no_posts_description' => 'Nachricht welche dargestellt wird wenn keine Artikel vorhanden sind. Dieser Wert wird von der Standard-Komponente verwendet.',
         'posts_order' => 'Artikel Sortierung',
-        'posts_order_decription' => 'Attribute nach welchem Artikel sortiert werden.',
+        'posts_order_description' => 'Attribute nach welchem Artikel sortiert werden.',
         'posts_category' => 'Kategorien-Seite',
         'posts_category_description' => 'Name der Kategorien-Seiten-Datei für "Veröffentlicht in" Kategorien-Links. Dieser Wert von der Standard-Komponente verwendet.',
         'posts_post' => 'Artikel Seite',
-        'posts_post_description' => 'Name der Artikel-Seiten-Datei für die "Erfahre mehr" Links. Dieser Wert für von der Standard-Komponente verwendet.',
-    ],
+        'posts_post_description' => 'Name der Artikel-Seiten-Datei für die "Erfahre mehr" Links. Dieser Wert für von der Standard-Komponente verwendet.'
+    ]
 ];

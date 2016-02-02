@@ -1,7 +1,8 @@
 <?php namespace RainLab\Blog\Updates;
 
-use RainLab\Blog\Models\Category;
+use Carbon\Carbon;
 use RainLab\Blog\Models\Post;
+use RainLab\Blog\Models\Category;
 use October\Rain\Database\Updates\Seeder;
 
 class SeedAllTables extends Seeder
@@ -9,37 +10,24 @@ class SeedAllTables extends Seeder
 
     public function run()
     {
-        //
-        // @todo
-        //
-        // Add a Welcome post or something
-        //
+        Post::create([
+            'title' => 'First blog post',
+            'slug' => 'first-blog-post',
+            'content' => '
+This is your first ever **blog post**! It might be a good idea to update this post with some more relevant content.
+
+You can edit this content by selecting **Blog** from the administration back-end menu.
+
+*Enjoy the good times!*
+            ',
+            'excerpt' => 'The first ever blog post is here. It might be a good idea to update this post with some more relevant content.',
+            'published_at' => Carbon::now(),
+            'published' => true
+        ]);
 
         Category::create([
             'name' => trans('rainlab.blog::lang.categories.uncategorized'),
             'slug' => 'uncategorized',
-        ]);
-        
-        Post::create([
-            'title'         => 'First post!',
-            'slug'          => 'first-post',
-            'author'        => 'Default Author',
-            'excerpt'       => 'This is the short description of this blog post',
-            'content'       => 'Dit is content   allemaal op 1 regels zonder HTMLS',
-            'content_html'  => '<p>Dit is content</p><p>Met paragrafen</p>',
-            'published_at'  => '2016-01-28 00:00:00',
-            'published'     => true
-        ]);
-        
-        Post::create([
-            'title'         => 'Second post!',
-            'slug'          => 'second-post',
-            'author'        => 'Default Author',
-            'excerpt'       => 'This is the short description of this blog post',
-            'content'       => 'Dit is content   allemaal op 1 regels zonder HTMLS',
-            'content_html'  => '<p>Dit is content</p><p>Met paragrafen</p>',
-            'published_at'  => '2016-01-28 00:00:00',
-            'published'     => true
         ]);
     }
 

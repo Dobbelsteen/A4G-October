@@ -2,12 +2,15 @@
 
 use App;
 use Str;
+use Html;
 use Lang;
 use Model;
 use Markdown;
 use ValidationException;
 use RainLab\Blog\Classes\TagProcessor;
 use Backend\Models\User;
+use Carbon\Carbon;
+use DB;
 
 class Post extends Model
 {
@@ -44,6 +47,7 @@ class Post extends Model
         'updated_at desc' => 'Updated (descending)',
         'published_at asc' => 'Published (ascending)',
         'published_at desc' => 'Published (descending)',
+        'random' => 'Random'
     );
 
     /*
@@ -54,7 +58,11 @@ class Post extends Model
     ];
 
     public $belongsToMany = [
-        'categories' => ['RainLab\Blog\Models\Category', 'table' => 'rainlab_blog_posts_categories', 'order' => 'name']
+        'categories' => [
+            'RainLab\Blog\Models\Category',
+            'table' => 'rainlab_blog_posts_categories',
+            'order' => 'name'
+        ]
     ];
 
     public $attachMany = [
@@ -69,91 +77,6 @@ class Post extends Model
 
     public $preview = null;
 
-    /**
-     * Lists posts for the front end
-     * @param  array $options Display options
-     * @return self
-     */
-    public function scopeListFrontEnd($query, $options)
-    {
-        /*
-         * Default options
-         */
-        extract(array_merge([
-            'page'       => 1,
-            'perPage'    => 30,
-            'sort'       => 'created_at',
-            'categories' => null,
-            'search'     => '',
-            'published'  => true
-        ], $options));
-
-        $searchableFields = ['title', 'slug', 'excerpt', 'content', 'author'];
-
-        if ($published)
-            $query->isPublished();
-
-        /*
-         * Sorting
-         */
-        if (!is_array($sort)) $sort = [$sort];
-        foreach ($sort as $_sort) {
-
-            if (in_array($_sort, array_keys(self::$allowedSortingOptions))) {
-                $parts = explode(' ', $_sort);
-                if (count($parts) < 2) array_push($parts, 'desc');
-                list($sortField, $sortDirection) = $parts;
-
-                $query->orderBy($sortField, $sortDirection);
-            }
-        }
-
-        /*
-         * Search
-         */
-        $search = trim($search);
-        if (strlen($search)) {
-            $query->searchWhere($search, $searchableFields);
-        }
-
-        /*
-         * Categories
-         */
-        if ($categories !== null) {
-            if (!is_array($categories)) $categories = [$categories];
-            $query->whereHas('categories', function($q) use ($categories) {
-                $q->whereIn('id', $categories);
-            });
-        }
-
-        return $query->paginate($perPage, $page);
-    }
-
-    /**
-     * Allows filtering for specifc categories
-     * @param  Illuminate\Query\Builder  $query      QueryBuilder
-     * @param  array                     $categories List of category ids
-     * @return Illuminate\Query\Builder              QueryBuilder
-     */
-    public function scopeFilterCategories($query, $categories)
-    {
-        return $query->whereHas('categories', function($q) use ($categories) {
-            $q->whereIn('id', $categories);
-        });
-    }
-
-    public static function formatHtml($input, $preview = false)
-    {
-        $result = Markdown::parse(trim($input));
-
-        if ($preview)
-            $result = str_replace('<pre>', '<pre class="prettyprint">', $result);
-
-        $result = TagProcessor::instance()->processTags($result, $preview);
-
-        return $result;
-    }
-
     public function afterValidate()
     {
         if ($this->published && !$this->published_at) {
@@ -163,37 +86,9 @@ class Post extends Model
         }
     }
 
-    public function scopeIsPublished($query)
-    {
-        return $query
-            ->whereNotNull('published')
-            ->where('published', true)
-        ;
-    }
-
     public function beforeSave()
     {
         $this->content_html = self::formatHtml($this->content);
-    }
-
-    /**
-     * Used by "has_summary", returns true if this post uses a summary (more tag)
-     * @return boolean
-     */
-    public function getHasSummaryAttribute()
-    {
-        return strlen($this->getSummaryAttribute()) < strlen($this->content_html);
-    }
-
-    /**
-     * Used by "summary", returns the HTML content before the <!-- more --> tag
-     * @return string
-     */
-    public function getSummaryAttribute()
-    {
-        $more = '<!-- more -->';
-        $parts = explode($more, $this->content_html);
-        return array_get($parts, 0);
     }
 
     /**
@@ -224,5 +119,162 @@ class Post extends Model
     public function canEdit(User $user)
     {
         return ($this->user_id == $user->id) || $user->hasAnyAccess(['rainlab.blog.access_other_posts']);
+    }
+
+    public static function formatHtml($input, $preview = false)
+    {
+        $result = Markdown::parse(trim($input));
+
+        if ($preview) {
+            $result = str_replace('<pre>', '<pre class="prettyprint">', $result);
+        }
+
+        $result = TagProcessor::instance()->processTags($result, $preview);
+
+        return $result;
+    }
+
+    //
+    // Scopes
+    //
+
+    public function scopeIsPublished($query)
+    {
+        return $query
+            ->whereNotNull('published')
+            ->where('published', true)
+            ->whereNotNull('published_at')
+            ->where('published_at', '<', Carbon::now())
+        ;
+    }
+
+    /**
+     * Lists posts for the front end
+     * @param  array $options Display options
+     * @return self
+     */
+    public function scopeListFrontEnd($query, $options)
+    {
+        /*
+         * Default options
+         */
+        extract(array_merge([
+            'page'       => 1,
+            'perPage'    => 30,
+            'sort'       => 'created_at',
+            'categories' => null,
+            'category'   => null,
+            'search'     => '',
+            'published'  => true
+        ], $options));
+
+        $searchableFields = ['title', 'slug', 'excerpt', 'content'];
+
+        if ($published) {
+            $query->isPublished();
+        }
+
+        /*
+         * Sorting
+         */
+        if (!is_array($sort)) {
+            $sort = [$sort];
+        }
+
+        foreach ($sort as $_sort) {
+
+            if (in_array($_sort, array_keys(self::$allowedSortingOptions))) {
+                $parts = explode(' ', $_sort);
+                if (count($parts) < 2) {
+                    array_push($parts, 'desc');
+                }
+                list($sortField, $sortDirection) = $parts;
+                if ($sortField == 'random') {
+                    $sortField = DB::raw('RAND()');
+                }
+                $query->orderBy($sortField, $sortDirection);
+            }
+        }
+
+        /*
+         * Search
+         */
+        $search = trim($search);
+        if (strlen($search)) {
+            $query->searchWhere($search, $searchableFields);
+        }
+
+        /*
+         * Categories
+         */
+        if ($categories !== null) {
+            if (!is_array($categories)) $categories = [$categories];
+            $query->whereHas('categories', function($q) use ($categories) {
+                $q->whereIn('id', $categories);
+            });
+        }
+
+        /*
+         * Category, including children
+         */
+        if ($category !== null) {
+            $category = Category::find($category);
+
+            $categories = $category->getAllChildrenAndSelf()->lists('id');
+            $query->whereHas('categories', function($q) use ($categories) {
+                $q->whereIn('id', $categories);
+            });
+        }
+
+        return $query->paginate($perPage, $page);
+    }
+
+    /**
+     * Allows filtering for specifc categories
+     * @param  Illuminate\Query\Builder  $query      QueryBuilder
+     * @param  array                     $categories List of category ids
+     * @return Illuminate\Query\Builder              QueryBuilder
+     */
+    public function scopeFilterCategories($query, $categories)
+    {
+        return $query->whereHas('categories', function($q) use ($categories) {
+            $q->whereIn('id', $categories);
+        });
+    }
+
+    //
+    // Summary / Excerpt
+    //
+
+    /**
+     * Used by "has_summary", returns true if this post uses a summary (more tag)
+     * @return boolean
+     */
+    public function getHasSummaryAttribute()
+    {
+        return strlen($this->getSummaryAttribute()) < strlen($this->content_html);
+    }
+
+    /**
+     * Used by "summary", if no excerpt is provided, generate one from the content.
+     * Returns the HTML content before the <!-- more --> tag or a limited 600
+     * character version.
+     *
+     * @return string
+     */
+    public function getSummaryAttribute()
+    {
+        $excerpt = array_get($this->attributes, 'excerpt');
+        if (strlen(trim($excerpt))) {
+            return $excerpt;
+        }
+
+        $more = '<!-- more -->';
+        if (strpos($this->content_html, $more) !== false) {
+            $parts = explode($more, $this->content_html);
+            return array_get($parts, 0);
+        }
+
+        return Str::limit(Html::strip($this->content_html), 600);
     }
 }
