@@ -11,14 +11,14 @@
     </div>
     <div class="news-post-content-container">
         <div class="news-post-content">
-            <h4>{{ post.title|raw }}</h4>
+            <h4><a href="{{ 'blog'|page({ slug: post.slug }) }}">{{ post.title|raw }}</a></h4>
             <p class="news-post-excerpt">{{ post.excerpt|raw }}</p>
             <p class="news-post-date">
                 {% for category in post.categories %}
                     <span class="chip chip-grey chip-small light">{{ category.name }}</span>
                 {% endfor %}
                 &nbsp;
-                <span class="date pull-right">Gepost op {{ post.published_at|date("d/m/Y") }}</span>
+                <span class="date pull-right">Gepost op {{ post.published_at|date("d/m/Y") }} door {{ post.author }}</span>
             </p>
         </div>
     </div>

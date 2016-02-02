@@ -2,7 +2,8 @@
   "name": "MappsForGhent",
   "version": "0.0.1",
   "authors": [
-    "Sander Meert"
+    "Sander Meert",
+    "Thimo Thoeye"
   ],
   "description": "Website for MappsForGhent",
   "main": "app.js",

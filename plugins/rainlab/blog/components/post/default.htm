@@ -9,8 +9,8 @@
         {% endif %}
         <!-- Desktop share links -->
         <div class="hidden-xs">
-            <a class="news-post-share light" href="https://twitter.com/appsforghent"><img src="{{ 'assets/svg/twitter.svg'|theme }}"> Deel via Twitter</a>
-            <a class="news-post-share light" href="https://www.facebook.com/AppsForGhent/"><img src="{{ 'assets/svg/facebook.svg'|theme }}"> Deel via Facebook</a>
+            <a class="news-post-share light" href="https://twitter.com/share?url={{ url_full() }}"><img src="{{ 'assets/svg/twitter.svg'|theme }}"> Deel via Twitter</a>
+            <a class="news-post-share light" onclick="shareFb()"><img src="{{ 'assets/svg/facebook.svg'|theme }}"> Deel via Facebook</a>
         </div>
         <!-- End desktop share links -->
     </div>
@@ -24,14 +24,39 @@
                     <span class="chip chip-grey chip-small light">{{ category.name }}</span>
                 {% endfor %}
                 &nbsp;
-                <span class="date pull-right">Gepost op {{ post.published_at|date("d/m/Y") }}</span>
+                <span class="date pull-right">Gepost op {{ post.published_at|date("d/m/Y") }} door {{ post.author }}</span>
             </p>
             <!-- Mobile share links -->
             <div class="visible-xs">
-                <a class="news-post-share light" href="https://twitter.com/appsforghent"><img src="{{ 'assets/svg/twitter.svg'|theme }}"> Deel via Twitter</a>
-                <a class="news-post-share light" href="https://www.facebook.com/AppsForGhent/"><img src="{{ 'assets/svg/facebook.svg'|theme }}"> Deel via Facebook</a>
+                <a class="news-post-share light" href="https://twitter.com/share?url={{ url_full() }}"><img src="{{ 'assets/svg/twitter.svg'|theme }}"> Deel via Twitter</a>
+                <a class="news-post-share light" onclick="shareFb()"><img src="{{ 'assets/svg/facebook.svg'|theme }}"> Deel via Facebook</a>
             </div>
             <!-- End mobile share links -->
         </div>
     </div>
 </div>
+
+<script>    
+    document.addEventListener("DOMContentLoaded", function() {
+        $.ajaxSetup({ cache: true });
+        $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
+            FB.init({
+            appId: '1734347580129370',
+            version: 'v2.5'
+            });    
+            
+
+        });
+        
+        shareFb = function() {
+            FB.ui({
+                method: 'share',
+                display: 'popup',
+                picture: '{{ url() }}{{ post.featured_images[0].path }}',
+                href: '{{ url_full() }}',
+                caption: '{{ post.title|raw }}',
+            }, function(response){}); 
+        }
+    
+    });
+</script>

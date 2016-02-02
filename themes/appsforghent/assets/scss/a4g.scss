@@ -82,6 +82,11 @@ html, body, nav {
     }  
 }
 
+.link-container {
+    cursor: pointer;
+    cursor: hand;
+}
+
 a, a:active, a:focus {
     color: $font-color-medium;
     text-decoration: none;
@@ -159,12 +164,10 @@ h4 {
     width: 100%;
     padding: 1em;
     
-    @media screen and (max-width: 767px) {
-        &:first-of-type {
-        margin-top: 1em;
-        }
-        margin-bottom: 1em; 
-    }
+    &:first-of-type {
+        margin-top: 8px;
+    } 
+    margin-bottom: 8px; 
     
     a {
         color: $font-color-alt;
@@ -271,7 +274,7 @@ h4 {
 
 .card-data-rows {
     .card-white {
-        height: 110px;
+        height: 118px;
         position: relative;
     }
     
@@ -305,23 +308,12 @@ h4 {
         right: 1em;
     }
     
-    @media screen and (min-width: 768px) {
-        &.library-cards>.row>div {
-            margin-bottom: 1em;
-            margin-top: 1em;
-        }
-        
-        .row {
-            margin-bottom: 30px;
+    .row {
+        margin-bottom: 0;
+    }
     
-            & > div {
-                height: 100%;
-                
-                & > .row:last-of-type {
-                    margin-bottom: 0;
-                }
-            }
-        }
+    .library-cards>.row>div {
+        margin-bottom: 12px;
     }
 }
 
@@ -365,10 +357,10 @@ nav {
         }
         
         a {
-            padding: 0.4em 0.8em;
+            padding: 0.4em 0.6em;
             font-size: 1em;
             text-transform: uppercase;
-            margin-left: 0.8em;
+            margin-left: 0.6em;
             
             &.active {
                 color: $font-color-alt;
@@ -469,6 +461,14 @@ footer {
     
     h1 {
         margin-bottom: 10px;
+        
+        a {
+            color: $font-color-dark;
+            
+            &:hover {
+                color: $font-color-alt;
+            }
+        }
     }
     
     h2 {
@@ -487,7 +487,7 @@ footer {
     
     .intro-logo {
         width: 90%;
-        max-width: 600px;
+        max-width: 300px;
     }
     
     @media(max-width: 767px) {
@@ -495,10 +495,6 @@ footer {
      
         h1 {
             font-size: 3em;
-        }
-        
-        .intro-logo {
-            max-width: 300px;
         }
     }
     
@@ -658,6 +654,11 @@ footer {
             padding: 1em 1.5em;
             float: left;
             
+            img {
+                height: 50px;
+                width: 50px;
+            }
+            
             a {
                 color: $font-color-medium;
                 
@@ -700,6 +701,8 @@ footer {
                 display: block;
                 margin-top: 1em;
                 margin-left: 2em;
+                cursor: pointer;
+                cursor: hand;
                 
                 &:first-of-type {
                     margin-top: 2em;
@@ -768,8 +771,24 @@ footer {
                         font-size: 18px;
                         padding: 0.5em 0;
                         margin-top: 15px;
-                        margin-bottom: 15px;
+                        margin-bottom: 0;
                         color: $font-color-alt;
+                    }
+                    
+                    h2, h3 {
+                        font-size: 18px;
+                        padding: 0.5em 0;
+                        margin-top: 5px;
+                        margin-bottom: 0;
+                    }
+                    
+                    h3 {
+                        font-size: 1em;
+                    }
+                    
+                    a {
+                        color: $font-color-alt;
+                        font-weight: 600;
                     }
                     
                     ul, li {
@@ -885,6 +904,11 @@ footer {
     
     &.chip-light-blue {
         background-color: lighten($font-color-alt, 3%);
+        
+        &:hover {
+            background-color: #00bc91;
+            background-color: darken($font-color-alt, 6%);
+        }
     }
     
     &.chip-grey {
@@ -1000,8 +1024,9 @@ hr {
         border: none;
         outline: none;
         font-family: $font-light;
+        font-weight: 800;
         color: $font-color-white;
-        background-color: lighten($color-blue, 3%);
+        background-color: lighten($color-blue, 2%);
         
         &:focus {
             outline: none;
@@ -1017,6 +1042,7 @@ hr {
         background-color: $font-color-alt-red;
         color: $color-white;
         font-family: $font;
+        font-weight: 400;
     }
 } 
 
