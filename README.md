@@ -36,3 +36,11 @@ Username: admin
 Password: admin  
 
 It is advised you change these ASAP.
+
+### Step 5: Twitterwall
+
+To configure your Twitterwall, go to `themes/appsforghent/assets/vendor/Tweetie/api/config.example.php`
+
+There, fill out your Twitter developer details: consumer_key, consumer_secret, access_token, access_secret
+
+Finally, rename the file to `config.php`
