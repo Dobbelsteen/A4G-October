@@ -1,0 +1,31 @@
+{
+  "name": "Tweetie",
+  "main": "Tweetie.js",
+  "version": "2.4.3",
+  "homepage": "https://github.com/sonnyt/Tweetie",
+  "description": "Simple Twitter Feed Plugin that works with new Twitter 1.1 API.",
+  "keywords": [
+    "jquery",
+    "twitter",
+    "feed",
+    "api"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "2.4.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.4.3",
+    "commit": "d0353251502ea3894516dd9fabb0eaa5b78a1125"
+  },
+  "_source": "git://github.com/sonnyt/Tweetie.git",
+  "_target": "~2.4.3",
+  "_originalSource": "tweetie",
+  "_direct": true
+}

@@ -23,6 +23,16 @@ function onStart()
 </div>
 <div class="section section-light">
     <div class="container">
-         {% component 'tweetFeed' %}
+        <div id="twitter-wall">
+            <ul>Laden...</ul>
+        </div>
     </div>
 </div>
+
+{% put scripts %}
+	<script src="{{ [
+        'assets/javascript/twitter.js',
+        'assets/vendor/Tweetie/tweetie.js'
+    ]|theme }}"></script>
+{% endput %}
+    

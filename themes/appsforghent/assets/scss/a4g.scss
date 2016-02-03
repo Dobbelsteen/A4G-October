@@ -705,6 +705,10 @@ footer {
         padding-left: 0;
         padding-right: 0;
         
+        .cat-header {
+            margin-top: -20px;
+        }
+        
         @media screen and(max-width: 1080px) {
             padding-left: 15px;
             padding-right: 15px;
@@ -866,6 +870,90 @@ footer {
         }
     }
 }
+
+/**
+ * Twitter wall 
+ */
+ 
+#twitter-wall {
+    @media screen and (max-width:1080px) {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+    
+    &>ul {
+        list-style: none;
+        padding: 0;
+        
+        li {
+            display: block;
+            margin-bottom: 15px;
+            
+            &>div {
+                overflow: hidden;
+                
+                .twitter-left, .twitter-center, .twitter-right {
+                    background-color: $color-white;
+                    padding: 1em 2em;
+                    padding-bottom: 1000px;
+                    margin-bottom: -1000px;
+                    height: 100%;
+                    line-height: 1.4em;
+                    
+                    @media screen and (max-width: 767px) {
+                        padding-left: 1em;
+                        padding-right: 1em;    
+                    }
+                    
+                    .bottom-spacer {
+                        display: block;
+                        margin-bottom: 1em;
+                    }
+                }
+                
+                .twitter-left {
+                    background-color: $color-light-dark;
+                    padding-left: 1.5em;
+                    padding-right: 1em;
+                    
+                    a {
+                        color: $font-color-dark;
+                        
+                        &:hover {
+                            color: $font-color-alt;
+                        }
+                    }
+                }
+                
+                .twitter-center {
+                    font-family: $font-light;
+                    
+                    a {
+                        color: $font-color-alt;
+                        
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                    
+                    img {
+                        margin-top: 1em;
+                        max-width: 100%;
+                    }
+                    
+                    @media screen and (max-width: 991px) {
+                        border-right: 10px solid $font-color-alt;
+                    }
+                }
+                
+                .twitter-right {
+                    font-family: $font-light;
+                    border-right: 10px solid $font-color-alt;
+                }        
+            }
+        }
+    }
+} 
 
 /**
  * Bootstrap pagination overrides

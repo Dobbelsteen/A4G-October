@@ -30,6 +30,7 @@
     "jquery": "~2.1.3",
     "fontawesome": "~4.3.0",
     "bootstrap": "~3.3.4",
-    "pgwslider": "~2.3.*"
+    "pgwslider": "~2.3.*",
+    "Tweetie": "tweetie#~2.4.3"
   }
 }

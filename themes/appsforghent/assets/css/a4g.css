@@ -459,6 +459,8 @@ footer {
 #news-content .container {
   padding-left: 0;
   padding-right: 0; }
+  #news-content .container .cat-header {
+    margin-top: -20px; }
   @media screen and (max-width: 1080px) {
     #news-content .container {
       padding-left: 15px;
@@ -564,6 +566,60 @@ footer {
           position: relative;
           left: auto;
           right: auto; } }
+
+/**
+ * Twitter wall 
+ */
+@media screen and (max-width: 1080px) {
+  #twitter-wall {
+    margin-left: 12px;
+    margin-right: 12px; } }
+
+#twitter-wall > ul {
+  list-style: none;
+  padding: 0; }
+  #twitter-wall > ul li {
+    display: block;
+    margin-bottom: 15px; }
+    #twitter-wall > ul li > div {
+      overflow: hidden; }
+      #twitter-wall > ul li > div .twitter-left, #twitter-wall > ul li > div .twitter-center, #twitter-wall > ul li > div .twitter-right {
+        background-color: #FFF;
+        padding: 1em 2em;
+        padding-bottom: 1000px;
+        margin-bottom: -1000px;
+        height: 100%;
+        line-height: 1.4em; }
+        @media screen and (max-width: 767px) {
+          #twitter-wall > ul li > div .twitter-left, #twitter-wall > ul li > div .twitter-center, #twitter-wall > ul li > div .twitter-right {
+            padding-left: 1em;
+            padding-right: 1em; } }
+        #twitter-wall > ul li > div .twitter-left .bottom-spacer, #twitter-wall > ul li > div .twitter-center .bottom-spacer, #twitter-wall > ul li > div .twitter-right .bottom-spacer {
+          display: block;
+          margin-bottom: 1em; }
+      #twitter-wall > ul li > div .twitter-left {
+        background-color: #e3e5e5;
+        padding-left: 1.5em;
+        padding-right: 1em; }
+        #twitter-wall > ul li > div .twitter-left a {
+          color: #666666; }
+          #twitter-wall > ul li > div .twitter-left a:hover {
+            color: #00DBC0; }
+      #twitter-wall > ul li > div .twitter-center {
+        font-family: NeoSansLight, sans-serif; }
+        #twitter-wall > ul li > div .twitter-center a {
+          color: #00DBC0; }
+          #twitter-wall > ul li > div .twitter-center a:hover {
+            text-decoration: underline; }
+        #twitter-wall > ul li > div .twitter-center img {
+          margin-top: 1em;
+          max-width: 100%; }
+        @media screen and (max-width: 991px) {
+          #twitter-wall > ul li > div .twitter-center {
+            border-right: 10px solid #00DBC0; } }
+      #twitter-wall > ul li > div .twitter-right {
+        font-family: NeoSansLight, sans-serif;
+        border-right: 10px solid #00DBC0; }
 
 /**
  * Bootstrap pagination overrides

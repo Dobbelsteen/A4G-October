@@ -23,7 +23,7 @@ function onStart()
 <div id="news-tabs">
     <div class="container">
         <div class="news-tab active">
-            <img src="{{ 'assets/svg/blog.svg'|theme }}"> Blog
+            <a href="{{ 'nieuws'|page }}"><img src="{{ 'assets/svg/blog.svg'|theme }}"> Blog</a>
         </div>
         <div class="news-tab">
             <a href="{{ 'twitter'|page }}"><img src="{{ 'assets/svg/twitter.svg'|theme }}"> Twitter</a>
@@ -33,9 +33,9 @@ function onStart()
 <div id="news-content" class="section section-light">
     <div class="container">
          {% if not category %}
-            <h2>Categorie niet gevonden</h2>
+            <h2 class="cat-header">Categorie niet gevonden</h2>
         {% else %}
-            <h2>Posts onder {{ category.name }}</h2>
+            <h2 class="cat-header">Posts onder &lsaquo;{{ category.name }}&rsaquo;</h2>
             {% component 'blogPosts' %}
         {% endif %}
     </div>
