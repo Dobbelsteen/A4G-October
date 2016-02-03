@@ -168,9 +168,15 @@ h4 {
     .view-more a:hover {
       color: #00DBC0; }
 
+.dataset-category-filter {
+  cursor: hand;
+  cursor: pointer; }
+
 .card-data-rows .card-white {
   height: 118px;
-  position: relative; }
+  position: relative;
+  cursor: hand;
+  cursor: pointer; }
 
 .card-data-rows .card-featured {
   height: 250px; }
@@ -180,11 +186,19 @@ h4 {
   text-transform: uppercase;
   font-weight: bold;
   position: absolute;
-  font-size: 18px; }
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.card-data-rows .card-white:hover .data-type {
+  white-space: normal;
+  word-wrap: break-word; }
 
 .card-data-rows .data-type {
   top: 0.5em;
-  left: 1em; }
+  left: 1em;
+  right: 1em; }
   .card-data-rows .data-type .data-subtype {
     display: block;
     font-family: NeoSansLight, sans-serif;

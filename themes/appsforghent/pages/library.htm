@@ -15,16 +15,13 @@ function onStart()
         <div class="row">
             <div class="hidden-xs col-xs-3 card-data-categories">
                 <h4>Categorieën</h4>
-                <p>
-                    Gezondheid<br>
-                    OCMW<br>
-                    Bevolking<br>
-                    Begroting<br>
-                    Toerisme<br>
+                <p id="datatank-categories">
+                    <span class="dataset-category-filter">Alle</span><br>
                 </p>
             </div>
             <div class="col-xs-12 col-sm-9 card-data-rows library-cards">
-                <div class="row info-cards">
+                <div class="row info-cards" id="datatank">
+                    <!--
                     <div class="col-xs-6 col-sm-4">
                         <div class="card-white">   
                             <span class="data-type">
@@ -32,46 +29,16 @@ function onStart()
                                 <span class="data-subtype">Mooo</span>
                             </span>
                         </div>
-                    </div>
-                    
-                    <div class="col-xs-6 col-sm-4">
-                        <div class="card-white">   
-                            <span class="data-type">
-                                Statsec
-                                <span class="data-subtype">Mooo</span>
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <div class="col-xs-6 col-sm-4">
-                        <div class="card-white">   
-                            <span class="data-type">
-                                Deelgemeenten
-                                <span class="data-subtype">Mooo</span>
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <div class="col-xs-6 col-sm-4">
-                        <div class="card-white">   
-                            <span class="data-type">
-                                Huisartsen
-                                <span class="data-subtype">Mooo</span>
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <div class="col-xs-6 col-sm-4">
-                        <div class="card-white">   
-                            <span class="data-type">
-                                Huisartsen
-                                <span class="data-subtype">Mooo</span>
-                            </span>
-                        </div>
-                    </div>
-                    
+                    </div>  
+                    -->             
                 </div>
             </div>        
         </div>
     </div>
 </div>
+
+{% put scripts %}
+	<script src="{{ [
+        'assets/javascript/datatank.js'
+    ]|theme }}"></script>
+{% endput %}

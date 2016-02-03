@@ -273,10 +273,17 @@ h4 {
     }
 }
 
+.dataset-category-filter {
+    cursor: hand;
+    cursor: pointer;   
+}
+
 .card-data-rows {
     .card-white {
         height: 118px;
         position: relative;
+        cursor: hand;
+        cursor: pointer;
     }
     
     .card-featured {
@@ -289,11 +296,20 @@ h4 {
         font-weight: bold;
         position: absolute;
         font-size: 18px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .card-white:hover .data-type {
+        white-space: normal;
+        word-wrap: break-word;
     }
     
     .data-type {
         top: 0.5em;
         left: 1em;
+        right: 1em;
         
         .data-subtype {
             display: block;
