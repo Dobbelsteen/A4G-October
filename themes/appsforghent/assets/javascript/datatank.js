@@ -9,11 +9,13 @@ $(function() {
             url: 'http://datatank.stad.gent/4/api/info',
             method: 'GET',
             success: function (data) {
-                console.log(data);
                 renderDatasets(data);
             },
             error: function (e) {
                 console.log(e);
+                var currentDiv = document.getElementById('datatank'); 
+                var setMsg = document.createTextNode('Error loading datasets...');
+                currentDiv.appendChild(setMsg);
             },
             cache: true
         });
@@ -39,6 +41,7 @@ $(function() {
             cardDiv.setAttribute('class', 'card-white dataset-card');
             cardDiv.setAttribute('data-url', dataset);
             cardDiv.setAttribute('data-theme', theme);
+            cardDiv.setAttribute('title', data[dataset].description);
             cardSpan.setAttribute('class', 'data-type');
             cardSubspan.setAttribute('class', 'data-subtype');
             // Append elements to eachother and DOM
