@@ -168,9 +168,12 @@ h4 {
     .view-more a:hover {
       color: #00DBC0; }
 
-.dataset-category-filter {
+#datatank-categories .dataset-category-filter {
+  display: block;
   cursor: hand;
-  cursor: pointer; }
+  cursor: pointer;
+  margin-bottom: 5px;
+  line-height: 1.2em; }
 
 .card-data-rows .card-white {
   height: 118px;
@@ -217,8 +220,7 @@ h4 {
   margin-bottom: 12px; }
 
 .card-data-categories {
-  top: 0.5em;
-  left: 1em; }
+  top: 0.5em; }
 
 .light {
   font-family: NeoSansLight, sans-serif; }

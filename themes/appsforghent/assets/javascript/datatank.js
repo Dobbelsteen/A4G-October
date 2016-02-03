@@ -35,7 +35,7 @@ $(function() {
             var setType = document.createTextNode(theme);
              
             // Set required CSS classes
-            colDiv.setAttribute('class', 'col-xs-6 col-sm-4');
+            colDiv.setAttribute('class', 'col-xs-12 col-sm-6 col-md-4');
             cardDiv.setAttribute('class', 'card-white dataset-card');
             cardDiv.setAttribute('data-url', dataset);
             cardDiv.setAttribute('data-theme', theme);
@@ -64,11 +64,9 @@ $(function() {
         for(var i = 0; i < l; i++) {
             var span = document.createElement('span'); 
             var cat = document.createTextNode(themes[i]);
-            var br = document.createElement('br');
             span.setAttribute('class', 'dataset-category-filter');
             span.appendChild(cat);
             catP.appendChild(span);
-            catP.appendChild(br);
         }
         
         // Redirect to dataset on TheDatatank

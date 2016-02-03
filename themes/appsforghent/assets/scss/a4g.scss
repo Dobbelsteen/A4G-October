@@ -273,9 +273,14 @@ h4 {
     }
 }
 
-.dataset-category-filter {
-    cursor: hand;
-    cursor: pointer;   
+#datatank-categories {
+    .dataset-category-filter {
+        display: block;
+        cursor: hand;
+        cursor: pointer;   
+        margin-bottom: 5px;
+        line-height: 1.2em;
+    }
 }
 
 .card-data-rows {
@@ -336,7 +341,6 @@ h4 {
 
 .card-data-categories {
     top: 0.5em;
-    left: 1em;
 }
 
 .light {
