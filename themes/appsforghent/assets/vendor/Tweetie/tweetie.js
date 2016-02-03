@@ -134,6 +134,9 @@
 
                 if (typeof callback === 'function') { callback(); }
             });
+        }).fail(function(e) {
+            console.log("error:");
+            console.log(e);
         });
     };
 
