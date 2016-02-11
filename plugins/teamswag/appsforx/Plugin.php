@@ -51,20 +51,20 @@ class Plugin extends PluginBase
             'appsforx' => [
                 'label'       => 'Appsfor X',
                 'url'         => Backend::url('teamswag/appsforx/showcases'),
-                'icon'        => 'icon-pencil',
+                'icon'        => 'icon-rocket',
                 'permissions' => ['teamswag.appsforx.*'],
                 'order'       => 500,
 
                 'sideMenu' => [
                     'events' => [
                         'label'       => 'Showcases',
-                        'icon'        => 'icon-copy',
+                        'icon'        => 'icon-file-code-o',
                         'url'         => Backend::url('teamswag/appsforx/showcases'),
                         'permissions' => ['* ']
                     ],
                     'locations' => [
                         'label'       => 'Locations',
-                        'icon'        => 'icon-copy',
+                        'icon'        => 'icon-crosshairs',
                         'url'         => Backend::url('teamswag/appsforx/locations'),
                         'permissions' => ['* ']
                     ]

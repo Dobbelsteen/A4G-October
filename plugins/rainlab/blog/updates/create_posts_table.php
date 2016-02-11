@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->text('content_html')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->boolean('published')->default(false);
+            $table->string('author')->nullable();
             $table->timestamps();
         });
     }
