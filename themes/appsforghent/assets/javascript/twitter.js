@@ -7,7 +7,7 @@ $(function() {
     function twitterWall() {
         $('#twitter-wall').twittie({
             'apiPath':'themes/appsforghent/assets/vendor/Tweetie/api/tweet.php',
-            'hashtag': 'mappsforghent',
+            'hashtag': 'mappsforghent OR appsforghent',
             'count': 15,
             'dateFormat': '%d %b.',
             'temp': '<div>{{user_name}}<br>{{screen_name}}<br>{{tweet}}<br>{{favorites}}</div>',

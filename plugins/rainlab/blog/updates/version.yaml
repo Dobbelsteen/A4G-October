@@ -25,3 +25,6 @@
     - categories_add_nested_fields.php
 1.2.1: Post slugs now must be unique.
 1.2.2: Fixes issue on new installs.
+1.2.3: 
+    - Add author field to posts table
+    - update_posts_table.php

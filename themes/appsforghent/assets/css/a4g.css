@@ -552,6 +552,8 @@ footer {
             display: block;
             margin-top: 0.4em;
             margin-bottom: 1em; }
+        #news-content .container .news-post .news-post-content-container .news-post-content img {
+          max-width: 100%; }
     #news-content .container .news-post:after {
       clear: both; }
     @media screen and (max-width: 767px) {

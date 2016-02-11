@@ -18,7 +18,9 @@
                     <a href="{{ 'blogcategory'|page({ slug: category.slug }) }}" class="chip chip-grey chip-small light">{{ category.name }}</a>
                 {% endfor %}
                 &nbsp;
-                <span class="date pull-right">Gepost op {{ post.published_at|date("d/m/Y") }} door {{ post.author }}</span>
+                <span class="date pull-right">Gepost op {{ post.published_at|date("d/m/Y") }} 
+                    {% if post.author %} door {{ post.author }} {% endif %}
+                </span>
             </p>
         </div>
     </div>

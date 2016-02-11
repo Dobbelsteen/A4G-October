@@ -3,14 +3,14 @@
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class UpdateShowcasesTable extends Migration
+class UpdatePostsTable extends Migration
 {
 
     public function up()
     {
-        Schema::table('teamswag_appsforx_showcases', function($table)
+        Schema::table('rainlab_blog_posts', function($table)
         {
-                $table->string('url_github')->nullable()->add();
+                $table->string('author')->nullable()->add();
         });
         
     }

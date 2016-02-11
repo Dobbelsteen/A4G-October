@@ -16,6 +16,9 @@ fields:
         preset:
             field: title
             type: slug
+            
+    author:
+        label: Author
 
     toolbar:
         type: partial

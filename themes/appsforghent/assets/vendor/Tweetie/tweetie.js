@@ -52,7 +52,7 @@
             var time = twt_date.split(' ');
             twt_date = new Date(Date.parse(time[1] + ' ' + time[2] + ', ' + time[5] + ' ' + time[3] + ' UTC'));
 
-            var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            var months = ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'];
 
             var _date = {
                 '%d': twt_date.getDate(),
@@ -91,7 +91,7 @@
 
         // Set loading
        	//this.html('<ul>'+settings.loadingText+'</ul>');
-        console.log("loading");
+        console.log("loading...");
 
         var that = this;
 
@@ -99,6 +99,8 @@
         $.getJSON(settings.apiPath, { username: settings.username, list: settings.list, hashtag: settings.hashtag, count: settings.count, exclude_replies: settings.hideReplies }, function (twt) {
             that.find('ul').fadeOut('fast', function () {
                 that.html('<ul></ul>');
+                
+                //console.log(twt);
                 
                 for (var i = 0; i < settings.count; i++) {
                     var tweet = false;
