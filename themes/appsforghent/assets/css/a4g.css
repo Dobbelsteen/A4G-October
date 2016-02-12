@@ -385,8 +385,7 @@ footer {
   -webkit-justify-content: center;
   justify-content: center; }
   #partner-logos a {
-    margin-left: 10px;
-    margin-right: 10px; }
+    margin: 20px 10px; }
     #partner-logos a img {
       height: 100px;
       width: auto; }
