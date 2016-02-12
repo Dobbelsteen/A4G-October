@@ -229,6 +229,7 @@ h4 {
             padding: 1em;
             z-index: -1;
             background-color: $color-white;
+            border-bottom: 2px solid $color-light-dark;  
             opacity: 0;
             
             .description {

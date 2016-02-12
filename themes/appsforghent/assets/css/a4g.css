@@ -146,6 +146,7 @@ h4 {
       padding: 1em;
       z-index: -1;
       background-color: #FFF;
+      border-bottom: 2px solid #e3e5e5;
       opacity: 0; }
       .card-image .card-flip .card-backside .description {
         margin-bottom: 1em;
