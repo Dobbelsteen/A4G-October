@@ -33,9 +33,9 @@ function onStart()
 <div id="news-content" class="section section-light">
     <div class="container">
          {% if not category %}
-            <h2 class="cat-header">Categorie niet gevonden</h2>
+            <h2 class="cat-header light">Categorie niet gevonden</h2>
         {% else %}
-            <h2 class="cat-header">Posts onder &lsaquo;{{ category.name }}&rsaquo;</h2>
+            <h2 class="cat-header"><font class="light">Posts onder &lsaquo;</font>{{ category.name }}<font class="light">&rsaquo;</font></h2>
             {% component 'blogPosts' %}
         {% endif %}
     </div>

@@ -80,14 +80,26 @@ $(function() {
         // Filter datasets by category
         $('.dataset-category-filter').on('click', function(el) {
             var selectedCat = el.target.innerText;
+            var that = this;
             
-            if(selectedCat == 'Alle') {
-                $('.dataset-card').parent().show();
-            } else {
-                $('.dataset-card').parent().hide();
-                var sel = $(".dataset-card[data-theme='" + selectedCat + "']");
-                sel.parent().show();
-            }
+            $('#datatank').fadeOut(function() {
+                $('.dataset-category-filter').removeClass('bold');
+                $(that).addClass('bold');
+                
+                if(selectedCat == 'Alle') {
+                    $('.dataset-card').parent().show();
+                } else {
+                    $('.dataset-card').parent().hide();
+                    var sel = $(".dataset-card[data-theme='" + selectedCat + "']");
+                    sel.parent().show();
+                }
+                
+                $('#datatank').fadeIn();
+            });
+            
+            
+                
+            
         });
     }
   

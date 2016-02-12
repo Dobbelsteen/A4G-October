@@ -12,16 +12,18 @@
             <div class="card-backside">
                 <p class="description">{{ showcase.description }}</p>
                 <p title="Teamleden"><i class="fa fa-users"></i> {{ showcase.team_members }}</p>
+                {% if showcase.datasets %}
                 <p title="Gebruikte datasets"><i class="fa fa-file-code-o"></i>  {{ showcase.datasets }}</p>
+                {% endif %}
                 <p>
                     {% if showcase.url_website %}
-                        <a href="{{ showcase.url_website }}" title="Applicatie URL" target="_blank"><i class="fa fa-external-link fa-2x"></i></a> 
+                        <a href="{{ showcase.url_website }}" title="Applicatie link" target="_blank"><i class="fa fa-external-link fa-2x"></i></a> 
                     {% endif %}
                     {% if showcase.url_presentation %}
-                        <a href="{{ showcase.url_presentation }}" title="Presentatie URL" target="_blank"><i class="fa fa-desktop fa-2x"></i></a>
+                        <a href="{{ showcase.url_presentation }}" title="Presentatie link" target="_blank"><i class="fa fa-desktop fa-2x"></i></a>
                     {% endif %}
                     {% if showcase.url_github %}
-                        <a href="{{ showcase.url_github }}" title="Github URL" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+                        <a href="{{ showcase.url_github }}" title="Github link" target="_blank"><i class="fa fa-github fa-2x"></i></a>
                     {% endif %}
                 </p>
             </div>          

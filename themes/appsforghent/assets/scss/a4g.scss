@@ -188,6 +188,20 @@ h4 {
     p:last-child {
         margin-bottom: 0;
     }
+    
+    img {
+        margin-left: 1em;
+        height: 150px;
+        width: auto;
+        /*
+        &:hover {
+            margin-bottom: 1em;
+            width: 100%;
+            height: auto;
+            z-index: 2;
+        }
+        */
+    }
 }
 
 .card-image {
@@ -214,6 +228,8 @@ h4 {
             top: 0;
             padding: 1em;
             z-index: -1;
+            background-color: $color-white;
+            opacity: 0;
             
             .description {
                 margin-bottom: 1em;
@@ -238,6 +254,7 @@ h4 {
             
             .card-backside {
                 z-index: 1;
+                opacity: 1;
             }
         }
     }
@@ -280,6 +297,21 @@ h4 {
         cursor: pointer;   
         margin-bottom: 5px;
         line-height: 1.2em;
+    }
+}
+
+#datatank {
+    &>div {
+        padding-right: 0;
+    }
+}
+
+#dataportal-section {
+    padding-top: 50px;
+    padding-bottom: 60px;
+    
+    h2 {
+        margin-bottom: 30px;
     }
 }
 
@@ -405,12 +437,14 @@ nav {
     
     .nav-mobile-links {
         display: none;
-        text-align: center;
+        text-align: left;
         clear: both;
+        padding-top: 30px;
+        padding-bottom: 20px;
         
         a {
             display: block;
-            padding: 0.4em 0.8em;
+            padding: 0.8em 0.8em;
             font-size: 1em;
             text-transform: uppercase;
             margin-left: 0.8em;
@@ -532,6 +566,27 @@ footer {
 
 #hackathon-section {
      margin-top: 0;    
+}
+
+#partner-logos {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    
+    a {
+        margin-left: 10px;
+        margin-right: 10px;
+        
+        img {
+            height: 100px;
+            width: auto;
+        }
+    }
 }
 
 #page-intro {
@@ -657,6 +712,14 @@ footer {
 .about-container {
     .row {
         margin-bottom: 15px;
+        
+        a {
+            color: $font-color-alt;
+            
+            &:hover, &:active {
+                text-decoration: underline;
+            }
+        }
     }
 }
 
@@ -774,7 +837,11 @@ footer {
                 position: relative;
 
                 .news-post-content {
-                    padding: 1em 2em;
+                    padding: 1em 2em 1em 2em;
+                    
+                    @media screen and (max-width: 480px) {
+                        padding: 1em;
+                    }
                     
                     .news-post-excerpt {
                         overflow: hidden;
@@ -784,8 +851,18 @@ footer {
                         -webkit-box-orient: vertical;
                     }
                     
+                    .news-post-share {
+                        color: $font-color-medium;
+                        
+                        &:hover {
+                            color: $font-color-dark;
+                        }
+                    }
+                    
                     p {
                         display: block;
+                        font-size: 1.1em;
+                        line-height: 1.5em;
                         
                         &.bottom-spacer {
                             margin-bottom: 4em;
@@ -813,7 +890,6 @@ footer {
                     
                     a {
                         color: $font-color-alt;
-                        font-weight: 600;
                     }
                    
                     a.chip, a.chip:hover {
@@ -953,6 +1029,7 @@ footer {
                 .twitter-right {
                     font-family: $font-light;
                     border-right: 10px solid $font-color-alt;
+                    color: $font-color-medium;
                 }        
             }
         }
@@ -1028,7 +1105,11 @@ footer {
     }
     
     &.chip-grey {
-        background-color: darken($color-medium, 6%);
+        background-color: lighten($color-medium, 3%);
+        
+        &:hover {
+            background-color: darken($color-medium, 6%);
+        }
     }
     
     &.chip-small {
@@ -1146,6 +1227,7 @@ hr {
         
         &:focus {
             outline: none;
+            background-color: lighten($color-blue, 5%);
         }
     }
     
@@ -1159,6 +1241,10 @@ hr {
         color: $color-white;
         font-family: $font;
         font-weight: 400;
+        
+        &:hover {
+            background-color: darken($font-color-alt-red, 5%);
+        }
     }
 } 
 
