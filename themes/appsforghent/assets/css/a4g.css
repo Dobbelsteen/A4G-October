@@ -273,6 +273,7 @@ nav {
       nav .nav-links {
         margin-top: 0; } }
     nav .nav-links a {
+      color: #C9CBCD;
       padding: 0.4em 0.6em;
       font-size: 1em;
       text-transform: uppercase;
@@ -284,7 +285,7 @@ nav {
         background-color: #00DBC0; }
   nav #nav-toggle {
     margin-right: 1em;
-    color: #CACBCD; }
+    color: #C9CBCD; }
     nav #nav-toggle.nav-toggle-expanded {
       color: #00DBC0; }
   nav .nav-mobile-links {
