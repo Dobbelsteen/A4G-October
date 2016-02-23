@@ -33,7 +33,8 @@ class Showcase extends Model
     ]; 
 
     public $rules = [
-        'name' => 'required'
+        'name' => 'required',
+        'priority' => 'required'
     ];
 
     public $customMessages = [

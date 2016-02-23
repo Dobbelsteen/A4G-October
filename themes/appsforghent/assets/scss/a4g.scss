@@ -182,7 +182,7 @@ h4 {
 }
 
 .card-grey {
-    padding: 1.5em 2.5em;
+    padding: 1.5em 2em;
     background-color: $color-light;
     
     p:last-child {
@@ -724,6 +724,34 @@ footer {
     }
 }
 
+.dark-about-container {
+    position: relative;
+    color: $font-color-white;
+    
+    .about-doodle-right {
+        position: absolute;
+        bottom: -32px;
+        right: 0;
+        
+        @media screen and (max-width:960px) {
+            right: -100px;
+        }
+        
+        @media screen and (max-width:768px) {
+            display: none;
+        }
+        
+    }
+    
+    .spacer {
+       margin-bottom: 2em;
+    }
+    
+    .small-spacer {
+       margin-bottom: 1em;
+    }
+}
+
 /**
  * News page
  */
@@ -1091,10 +1119,18 @@ footer {
         
     &.chip-red {
         background-color: $font-color-alt-red;
+        
+        &:hover {
+            background-color: darken($font-color-alt-red, 3%);
+        }
     }
     
     &.chip-blue {
         background-color: $font-color-alt;
+        
+        &:hover {
+            background-color: darken($font-color-alt, 3%);
+        }
     }
     
     &.chip-light-blue {

@@ -111,7 +111,7 @@ h4 {
   border-bottom: 2px solid #e3e5e5; }
 
 .card-grey {
-  padding: 1.5em 2.5em;
+  padding: 1.5em 2em;
   background-color: #F0F1F1; }
   .card-grey p:last-child {
     margin-bottom: 0; }
@@ -479,6 +479,24 @@ footer {
     .about-container .row a:hover, .about-container .row a:active {
       text-decoration: underline; }
 
+.dark-about-container {
+  position: relative;
+  color: #FFF; }
+  .dark-about-container .about-doodle-right {
+    position: absolute;
+    bottom: -32px;
+    right: 0; }
+    @media screen and (max-width: 960px) {
+      .dark-about-container .about-doodle-right {
+        right: -100px; } }
+    @media screen and (max-width: 768px) {
+      .dark-about-container .about-doodle-right {
+        display: none; } }
+  .dark-about-container .spacer {
+    margin-bottom: 2em; }
+  .dark-about-container .small-spacer {
+    margin-bottom: 1em; }
+
 /**
  * News page
  */
@@ -712,8 +730,12 @@ footer {
   display: inline-block; }
   .chip.chip-red {
     background-color: #FF3232; }
+    .chip.chip-red:hover {
+      background-color: #ff2323; }
   .chip.chip-blue {
     background-color: #00DBC0; }
+    .chip.chip-blue:hover {
+      background-color: #00ccb3; }
   .chip.chip-light-blue {
     background-color: #00eacd; }
     .chip.chip-light-blue:hover {
