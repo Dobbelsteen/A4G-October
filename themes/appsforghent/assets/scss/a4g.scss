@@ -411,6 +411,7 @@ nav {
         }
         
         a {
+            color: $font-color-med;
             padding: 0.4em 0.6em;
             font-size: 1em;
             text-transform: uppercase;
@@ -429,7 +430,7 @@ nav {
     
     #nav-toggle {
         margin-right: 1em;
-        color: $color-medium;
+        color: $font-color-med;
         
         &.nav-toggle-expanded {
             color: $color-blue;      
