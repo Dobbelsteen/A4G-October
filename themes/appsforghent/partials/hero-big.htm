@@ -1,11 +1,13 @@
 description = "Hero of the homepage"
 ==
+<?php
 function onStart()
 {
    $page_title = $this['page_title'];
    $page_subtitle = $this['page_subtitle'];
    $header_bg = $this['header_bg'];
 }
+?>
 ==
 <nav class="navbar visible-xs-block">
     <div class="nav-container">
@@ -19,7 +21,8 @@ function onStart()
             <a href="{{ 'nieuws'|page }}"    class="{{ this.page.title == 'Nieuws' ? 'active' : '' }}">Nieuws</a>
             <a href="{{ 'showcases'|page }}" class="{{ this.page.title == 'Showcases' ? 'active' : '' }}">Showcases</a>
             <a href="{{ 'hackathon'|page }}" class="{{ this.page.title == 'Hackathon' ? 'active' : '' }}">Hackathon</a>
-            <a href="{{ 'library'|page }}"   class="{{ this.page.title == 'Library' ? 'active' : '' }}">Dataportaal</a>
+            <a href="{{ 'library'|page }}"   class="{{ this.page.title == 'Library' ? 'active' : '' }}">Data</a>
+            <a href="{{ 'creative-ring-challenge'|page }}"   class="{{ this.page.title == 'Creative Ring Challenge' ? 'active' : '' }}">Creative Ring</a>
         </div>
     </div>
 </nav>
@@ -33,7 +36,8 @@ function onStart()
             <a href="{{ 'nieuws'|page }}"    class="{{ this.page.title == 'Nieuws' ? 'active' : '' }}">Nieuws</a>
             <a href="{{ 'showcases'|page }}" class="{{ this.page.title == 'Showcases' ? 'active' : '' }}">Showcases</a>
             <a href="{{ 'hackathon'|page }}" class="{{ this.page.title == 'Hackathon' ? 'active' : '' }}">Hackathon</a>
-            <a href="{{ 'library'|page }}"   class="{{ this.page.title == 'Library' ? 'active' : '' }}">Dataportaal</a>
+            <a href="{{ 'library'|page }}"   class="{{ this.page.title == 'Library' ? 'active' : '' }}">Data</a>
+            <a href="{{ 'creative-ring-challenge'|page }}"   class="{{ this.page.title == 'Creative Ring Challenge' ? 'active' : '' }}">Creative Ring</a>
         </span>
     </div>
 </nav>
