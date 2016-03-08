@@ -4,7 +4,7 @@
 
 fields:
     name:
-        label: Name
+        label: Naam
         span: left
         placeholder: Session Name
       
@@ -33,29 +33,29 @@ secondaryTabs:
             
         Location:
             tab: Manage
-            label: Location
+            label: Locatie
             type: relation
             span: left
             
         is_global:
             tab: Manage
-            label: Global session (across all locations/rooms)
+            label: Globale sessie (wordt gelinkt aan alle locaties als deze gebruikt worden)
             type: checkbox
             default: false
             
         color:
             tab: Manage
-            label: Color
+            label: Kleur
             type: colorpicker
 
         start_time:
             tab: Manage
-            label: Start time
+            label: Start tijd
             type: datepicker
 
         duration:
             tab: Manage
-            label: Duration
+            label: Duur (in minuten)
             type: number 
 
         niveau:
@@ -83,7 +83,7 @@ secondaryTabs:
 
         speakers:
             tab: Manage
-            label: Speakers
+            label: Sprekers
             type: relation
             nameFrom: name
         

@@ -69,19 +69,19 @@ class Plugin extends PluginBase
                         'permissions' => ['* ']
                     ],
                     'locations' => [
-                        'label'       => 'Locations',
+                        'label'       => 'Locaties',
                         'icon'        => 'icon-crosshairs',
                         'url'         => Backend::url('teamswag/appsforx/locations'),
                         'permissions' => ['* ']
                     ],
                     'sessions' => [
-                        'label'       => 'Sessions',
+                        'label'       => 'Sessies',
                         'icon'        => 'icon-comments-o',
                         'url'         => Backend::url('teamswag/appsforx/sessions'),
                         'permissions' => ['* ']
                     ],
                     'speakers' => [
-                        'label'       => 'Speakers',
+                        'label'       => 'Sprekers',
                         'icon'        => 'icon-users',
                         'url'         => Backend::url('teamswag/appsforx/speakers'),
                         'permissions' => ['* ']

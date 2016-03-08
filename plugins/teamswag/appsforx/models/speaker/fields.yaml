@@ -4,16 +4,16 @@
 
 fields:
     name:
-        label: Name
+        label: Naam
         type: text
 
     priority:
-        label: Priority
+        label: Prioriteit
         type: number
         default: 0
 
     description:
-        label: Description
+        label: Beschrijving
         cssClass: field-slim
         type: textarea
         showGutter: false
@@ -22,19 +22,19 @@ fields:
         margin: 15
 
     twitter:
-        label: Twitter
+        label: Twitter URL
         type: text
 
     linkedIn:
-        label: LinkedIn
+        label: LinkedIn URL
         type: text
 
     function:
-        label: Function
+        label: Functie
         type: text
 
     organisation:
-        label: Organisation
+        label: Organisatie
         type: text
         
     website:
@@ -42,7 +42,7 @@ fields:
         type: text
 
     sessions:
-        tab: Sessions
+        tab: Sessies
         label: Sessions
         type: relation
 

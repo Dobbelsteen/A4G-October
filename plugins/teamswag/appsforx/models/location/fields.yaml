@@ -4,11 +4,11 @@
 
 fields:
     name:
-        label: Name
+        label: Naam
         type: text
 
     description:
-        label: Description
+        label: Beschrijving
         cssClass: field-slim
         type: codeeditor
         language: markdown

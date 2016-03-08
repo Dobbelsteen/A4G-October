@@ -5,25 +5,25 @@
 columns:
 
     name:
-        label: Name
+        label: Naam
 
     priority:
-        label: Priority
+        label: Prioriteit
 
     twitter:
         label: Twitter
 
     linkedIn:
-        label: linkedIn
+        label: LinkedIn
 
     function:
-        label: function
+        label: Functie
 
     organisation:
-        label: organisation
+        label: Organisatie
 
     sessions:
-      label: Sessions
+      label: Sessies
       relation: sessions
       select: name
       

@@ -4,11 +4,11 @@
 
 columns:
     name:
-        label: Event name
+        label: Event naam
         type: text
         
     start_date:
-        label: Start Time
+        label: Start Datum
         
     end_date:
-        label: End Time
+        label: Eind Datum
