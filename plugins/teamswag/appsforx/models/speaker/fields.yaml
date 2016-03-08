@@ -1,0 +1,54 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Name
+        type: text
+
+    priority:
+        label: Priority
+        type: number
+        default: 0
+
+    description:
+        label: Description
+        cssClass: field-slim
+        type: textarea
+        showGutter: false
+        wrapWords: true
+        fontSize: 13
+        margin: 15
+
+    twitter:
+        label: Twitter
+        type: text
+
+    linkedIn:
+        label: LinkedIn
+        type: text
+
+    function:
+        label: Function
+        type: text
+
+    organisation:
+        label: Organisation
+        type: text
+        
+    website:
+        label: Website
+        type: text
+
+    sessions:
+        tab: Sessions
+        label: Sessions
+        type: relation
+
+    avatar:
+        label: Avatar
+        type: fileupload
+        mode: image
+        imageWidth: 200
+        imageHeight: 200

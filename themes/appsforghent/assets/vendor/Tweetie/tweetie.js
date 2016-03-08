@@ -112,26 +112,26 @@
                         break;
                     }
                     
-                    // console.log(tweet);
-
-                    var temp_data = {
-                        user_name: tweet.user.name,
-                        date: dating(tweet.created_at),
-                        tweet: (tweet.retweeted) ? linking('RT @'+ tweet.user.screen_name +': '+ tweet.retweeted_status.text) : linking(tweet.text),
-                        avatar: '<img src="'+ tweet.user.profile_image_url +'" />',
-                        url: 'https://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str,
-                        retweeted: tweet.retweeted,
-                        screen_name: linking('@'+ tweet.user.screen_name),
-                        favorites: tweet.favorite_count,
-                        retweets: tweet.retweet_count,
-                        image: ''
-                    };
-                    
-                    if(tweet.entities.media) {
-                        temp_data.image = '<img src="' + tweet.entities.media[0].media_url +'" />';
+                    if(!tweet.retweeted_status) {
+                        var temp_data = {
+                            user_name: tweet.user.name,
+                            date: dating(tweet.created_at),
+                            tweet: (tweet.retweeted) ? linking('RT @'+ tweet.user.screen_name +': '+ tweet.retweeted_status.text) : linking(tweet.text),
+                            avatar: '<img src="'+ tweet.user.profile_image_url +'" />',
+                            url: 'https://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str,
+                            retweeted: tweet.retweeted,
+                            screen_name: linking('@'+ tweet.user.screen_name),
+                            favorites: tweet.favorite_count,
+                            retweets: tweet.retweet_count,
+                            image: ''
+                        };
+                        
+                        if(tweet.entities.media) {
+                            temp_data.image = '<img src="' + tweet.entities.media[0].media_url +'" />';
+                        }
+                        
+                        that.find('ul').append('<li>' + templating(temp_data) + '</li>');
                     }
-                    
-                    that.find('ul').append('<li>' + templating(temp_data) + '</li>');
                 }
 
                 if (typeof callback === 'function') { callback(); }

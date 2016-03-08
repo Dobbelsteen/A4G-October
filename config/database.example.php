@@ -49,7 +49,7 @@ return [
             'port'      => '',
             'database'  => 'appsforghent',
             'username'  => 'root',
-            'password'  => 'bitnami',
+            'password'  => 'secret',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

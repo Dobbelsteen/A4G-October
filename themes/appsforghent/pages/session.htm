@@ -1,0 +1,20 @@
+title = "Session"
+url = "/session/:slug"
+layout = "default"
+is_hidden = 0
+
+[ssession]
+==
+<?php
+function onStart()
+{
+    $this['page_title'] = 'Session';
+    $this['header_bg'] = '/assets/banners/gewoon/banner-26.png';
+}
+?>
+==
+<div id="news-content" class="section section-light">
+    <div class="container">
+         {% component 'ssession' %}
+    </div>
+</div>

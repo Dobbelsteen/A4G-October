@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: session
+
+# Model Form Field configuration
+form: $/teamswag/appsforx/models/session/fields.yaml
+
+# Model Class name
+modelClass: Teamswag\Appsforx\Models\Session
+
+# Default redirect location
+defaultRedirect: teamswag/appsforx/sessions
+
+# Create page
+create:
+    title: Create session
+    redirect: teamswag/appsforx/sessions/update/:id
+    redirectClose: teamswag/appsforx/sessions
+
+# Update page
+update:
+    title: Edit session
+    redirect: teamswag/appsforx/sessions
+    redirectClose: teamswag/appsforx/sessions
+
+# Preview page
+preview:
+    title: Preview session

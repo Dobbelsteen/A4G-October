@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Speaker
+
+# Model Form Field configuration
+form: $/teamswag/appsforx/models/speaker/fields.yaml
+
+# Model Class name
+modelClass: Teamswag\Appsforx\Models\Speaker
+
+# Default redirect location
+defaultRedirect: teamswag/appsforx/speakers
+
+# Create page
+create:
+    title: Create Speaker
+    redirect: teamswag/appsforx/speakers/update/:id
+    redirectClose: teamswag/appsforx/speakers
+
+# Update page
+update:
+    title: Edit Speaker
+    redirect: teamswag/appsforx/speakers
+    redirectClose: teamswag/appsforx/speakers
+
+# Preview page
+preview:
+    title: Preview Speaker

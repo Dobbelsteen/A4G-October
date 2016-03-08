@@ -6,4 +6,8 @@
 1.0.2:
     - Updating showcase table
     - update_showcases_table.php
-    
+1.0.3:
+    - Add sessions events and speakers functionality
+    - create_events_table.php
+    - create_sessions_table.php
+    - create_session_speaker_pivot_table.php

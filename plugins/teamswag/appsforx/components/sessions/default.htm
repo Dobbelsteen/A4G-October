@@ -1,0 +1,17 @@
+{% set sessions = __SELF__.sessions %}
+{% set locations = __SELF__.locations %}
+
+{% for session in sessions %}
+<p>
+    {% if session.is_global %} 
+        Global session:
+    {% else %}
+        Session at {{ session.location.name }}: 
+    {% endif %}
+    <br>{{ session.name }}
+    <br>Starttime: {{ session.start_time }}
+    <br>Endtime: {{ session.end_time }}
+    <br>Color: {{ session.color }}
+    <br><a href="{{ url() }}/session/{{ session.slug }}">Link</a>
+</p>
+{% endfor %}

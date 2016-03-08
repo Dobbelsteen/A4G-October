@@ -1,0 +1,90 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Name
+        span: left
+        placeholder: Session Name
+      
+    slug:
+        label: Slug
+        span: right
+        placeholder: slug
+        preset:
+            field: name
+            type: slug
+            
+    toolbar:
+        type: partial
+        path: post_toolbar
+        cssClass: collapse-visible
+        
+secondaryTabs:
+    stretch: true
+    fields:      
+        content:
+            tab: Edit
+            type: RainLab\Blog\FormWidgets\BlogMarkdown
+            cssClass: field-slim blog-post-preview
+            stretch: true
+            mode: split   
+            
+        Location:
+            tab: Manage
+            label: Location
+            type: relation
+            span: left
+            
+        is_global:
+            tab: Manage
+            label: Global session (across all locations/rooms)
+            type: checkbox
+            default: false
+            
+        color:
+            tab: Manage
+            label: Color
+            type: colorpicker
+
+        start_time:
+            tab: Manage
+            label: Start time
+            type: datepicker
+
+        duration:
+            tab: Manage
+            label: Duration
+            type: number 
+
+        niveau:
+            tab: Manage
+            label: Niveau
+            type: dropdown
+                #Beginner: Beginner
+                #Intermediate: Intermediate
+                #Advanced: Advanced
+                #Expert: Expert
+
+        type:
+            tab: Manage
+            label: Type
+            type: dropdown
+                #Workshop: Workshop
+                #Panel: Panel
+                #Keynote: Keynote
+                #Hackathon: Hackathon
+
+        Event:
+            tab: Manage
+            label: Event
+            type: relation
+
+        speakers:
+            tab: Manage
+            label: Speakers
+            type: relation
+            nameFrom: name
+        
+

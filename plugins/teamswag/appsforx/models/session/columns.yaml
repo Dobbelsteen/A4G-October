@@ -1,0 +1,36 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+      label: Name
+
+    Location:
+      label: Location
+      relation: Location
+      select: name
+
+    start_time:
+      label: Start Time
+
+    duration:
+      label: Duration
+
+    niveau:
+      label: Niveau
+      select: niveau
+
+    type:
+      label: Type
+      select: type
+
+    event:
+      label: Event
+      relation: Event
+      select: name
+     
+    speakers:
+      label: Speakers
+      relation: speakers
+      select: name

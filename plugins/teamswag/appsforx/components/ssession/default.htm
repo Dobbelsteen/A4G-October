@@ -1,0 +1,62 @@
+{% set session = __SELF__.session %}
+{% set speakers = __SELF__.session.speakers %}
+
+<div class="news-post">
+    <div class="news-post-image">
+ 
+        <img class="featured-img" src="{{ 'assets/png/og_logo.png'|theme }}">     
+
+        <!-- Desktop share links -->
+        <div class="hidden-xs">
+            <li>Time: {{ session.start }}-{{ session.end }}</li>
+            <li>Location: {{ session.Location.name }}</li>
+            <li>Level: {{ session.niveau }}</li>
+            <li>Type: {{ session.type }}</li></div>
+        <!-- End desktop share links -->
+    </div>
+    <div class="news-post-content-container">
+        <div class="news-post-content">
+            <h4>{{ session.name|raw }}</h4>
+            <p>{{ session.content_html|raw }}</p>
+            <p class="bottom-spacer"></p>
+            <!-- Mobile share links -->
+            <div class="visible-xs">
+                <a class="news-post-share light" href="https://twitter.com/share?url={{ url_full() }}"><img src="{{ 'assets/svg/twitter.svg'|theme }}"> Deel via Twitter</a>
+                <a class="news-post-share light" onclick="shareFb()"><img src="{{ 'assets/svg/facebook.svg'|theme }}"> Deel via Facebook</a>
+            </div>
+            <!-- End mobile share links -->
+        </div>
+    </div>
+</div>
+
+<div class="row info-cards">
+    {% for speaker in speakers %}
+    <div class="col-sm-4 col-xs-12">
+        <div class="card-white card-image">
+            <div class="card-flip">        
+                {% if speaker.avatar.path %}
+                    <span class="overlay card-frontside" style="background-image: url('{{ speaker.avatar.path }}')"></span>            
+                {% else %}     
+                    <span class="overlay card-frontside" style="background-image: url('{{ 'assets/png/og_logo.png'|theme }}')"></span>
+                {% endif %}   
+                <div class="card-backside">
+                    <p class="description">{{ speaker.description|raw }}</p>
+                    <p>
+                        {% if speaker.website %}
+                            <a href="{{ speaker.website }}" title="Website link" target="_blank"><i class="fa fa-external-link fa-2x"></i></a> 
+                        {% endif %}
+                        {% if speaker.twitter %}
+                            <a href="{{ speaker.twitter }}" title="Twitter link" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+                        {% endif %}
+                        {% if speaker.linkedIn %}
+                            <a href="{{ speaker.linkedIn }}" title="LinkedIn link" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
+                        {% endif %}
+                    </p>
+                </div>          
+            </div>          
+            <h4>{{ speaker.name }}</h4>
+            <h5>{{ speaker.function }} @ {{ speaker.organisation }}</h5>
+        </div>
+    </div>
+    {% endfor %}
+</div>

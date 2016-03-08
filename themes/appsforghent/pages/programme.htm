@@ -1,0 +1,23 @@
+title = "Programme"
+url = "/programme"
+layout = "default"
+is_hidden = 0
+
+[sessions]
+==  
+<?php
+function onStart()
+{
+    $this['page_title'] = 'Programme';
+    $this['header_bg'] = '/assets/banners/gewoon/banner-26.png';
+}
+?>
+==
+<div id="showcase-content" class="section section-light">
+    <hr class="hr-white" />
+    <div class="container">
+        <div class="row info-cards">
+            {% component 'sessions' %}
+        </div>
+    </div>
+</div>

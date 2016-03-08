@@ -1,0 +1,36 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Event name
+        type: text
+        span: left
+        
+    slug:
+        label: Slug
+        span: right
+        placeholder: slug
+        preset:
+            field: name
+            type: slug
+
+    description:
+        label: Description
+        cssClass: field-slim
+        type: textarea
+        showGutter: false
+        wrapWords: true
+        fontSize: 13
+        margin: 15
+
+    start_date:
+        label: Start date
+        type: datepicker
+        mode: date
+        
+    end_date:
+        label: End date
+        type: datepicker
+        mode: date

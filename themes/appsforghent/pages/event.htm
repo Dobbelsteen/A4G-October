@@ -1,0 +1,24 @@
+title = "Event"
+url = "/event/:slug"
+layout = "default"
+is_hidden = 0
+
+[sevent]
+==
+<?php
+function onStart()
+{
+    $this['page_title'] = 'Single Event';
+    $this['header_bg'] = '/assets/banners/gewoon/banner-26.png';
+}
+?>
+==
+<div class="section section-light">
+    <hr class="hr-white" />
+    <div class="container">
+        <div class="row info-cards">
+            {% component 'sevent' %}
+        </div>
+    </div>
+</div>
+

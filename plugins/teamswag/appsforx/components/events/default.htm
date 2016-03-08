@@ -1,0 +1,9 @@
+{% set events = __SELF__.events %}
+
+<ul class="event-list">
+    {% for event in events %}
+        <li>
+            <a href="{{ url() }}/event/{{ event.slug }}">{{ event.name }}</a>
+        </li>
+    {% endfor %}
+</ul>

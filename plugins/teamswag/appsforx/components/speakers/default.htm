@@ -1,0 +1,31 @@
+{% set speakers = __SELF__.speakers %}
+
+{% for speaker in speakers %}
+<div class="col-sm-4 col-xs-12">
+    <div class="card-white card-image">
+        <div class="card-flip">        
+            {% if speaker.avatar.path %}
+                <span class="overlay card-frontside" style="background-image: url('{{ speaker.avatar.path }}')"></span>            
+            {% else %}     
+                <span class="overlay card-frontside" style="background-image: url('{{ 'assets/png/og_logo.png'|theme }}')"></span>
+            {% endif %}   
+            <div class="card-backside">
+                <p class="description">{{ speaker.description|raw }}</p>
+                <p>
+                    {% if speaker.website %}
+                        <a href="{{ speaker.website }}" title="Website link" target="_blank"><i class="fa fa-external-link fa-2x"></i></a> 
+                    {% endif %}
+                    {% if speaker.twitter %}
+                        <a href="{{ speaker.twitter }}" title="Twitter link" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+                    {% endif %}
+                    {% if speaker.linkedIn %}
+                        <a href="{{ speaker.linkedIn }}" title="LinkedIn link" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
+                    {% endif %}
+                </p>
+            </div>          
+        </div>          
+        <h4>{{ speaker.name }}</h4>
+        <h5>{{ speaker.function }} @ {{ speaker.organisation }}</h5>
+    </div>
+</div>
+{% endfor %}

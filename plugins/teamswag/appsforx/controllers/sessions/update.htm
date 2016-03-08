@@ -1,0 +1,24 @@
+<?php if (!$this->fatalError): ?>
+
+    <div class="layout fancy-layout">
+        <?= Form::open([
+            'class' => 'layout',
+            'data-change-monitor' => 'true',
+            'data-window-close-confirm' => e(trans('rainlab.blog::lang.post.close_confirm')),
+            'id' => 'post-form'
+        ]) ?>
+            <?= $this->formRender() ?>
+
+        <?= Form::close() ?>
+    </div>
+
+<?php else: ?>
+
+    <div class="control-breadcrumb">
+        <?= Block::placeholder('breadcrumb') ?>
+    </div>
+    <div class="padded-container">
+        <p class="flash-message static error"><?= e(trans($this->fatalError)) ?></p>
+        <p><a href="<?= Backend::url('teamswag/appsforx/sessions') ?>" class="btn btn-default">Return to sessions list</a></p>
+    </div>
+<?php endif ?>
